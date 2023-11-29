@@ -54,9 +54,26 @@
             <div class="col-12 mt-3 text-center" style="color: #03A678">
                 <h3>DAFTAR UJI KENDARAAN BERMOTOR ONLINE</h3>
                 <h6>"Mari daftar uji berkala kendaraan secara online"</h6>
-                <hr>
+                <div class="row mt-3">
+                    <div class="col-sm-12 col-md-4">
+                        <button class="btn btn-success btn-block mt-2">
+                            <i class="fa-solid fa-magnifying-glass"></i> Cek Kendaraan
+                        </button>
+                    </div>
+                    <div class="col-sm-12 col-md-4">
+                        <button class="btn btn-success btn-block mt-2">
+                            <i class="fa-regular fa-pen-to-square"></i> Pendaftaran
+                        </button>
+                    </div>
+                    <div class="col-sm-12 col-md-4">
+                        <button class="btn btn-success btn-block mt-2">
+                            <i class="fa-solid fa-magnifying-glass"></i> Cek Pendaftaran
+                        </button>
+                    </div>
+                </div>
             </div>
-            <div class="col-12 mt-1 text-center">
+            <div class="col-12 mt-3 text-center">
+                <hr>
                 <h5><b>UPTD TERDAFTAR</b></h5>
                 <hr>
             </div>
@@ -263,6 +280,8 @@
         integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
     <script>
         $(document).ready(function() {
             $(".owl-carousel").owlCarousel({
