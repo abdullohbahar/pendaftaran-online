@@ -50,13 +50,13 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto text-center">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">Beranda</a>
+                            <a class="nav-link" href="/">Beranda</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Regulasi</a>
+                            <a class="nav-link" href="{{ route('regulation') }}">Regulasi</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Pendaftaran</a>
+                            <a class="nav-link" href="{{ route('registration') }}">Pendaftaran</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Kritik & Saran</a>
@@ -113,9 +113,9 @@
         <div style="background-color: #048662; color: white;">
             <div class="container justify-content-between d-flex justify-content-between">
                 <div class="py-2">
-                    <a class="text-reset" href="">Beranda</a> |
-                    <a class="text-reset" href="">Regulasi</a> |
-                    <a class="text-reset" href="">Pendaftaran</a> |
+                    <a class="text-reset" href="/">Beranda</a> |
+                    <a class="text-reset" href="{{ route('regulation') }}">Regulasi</a> |
+                    <a class="text-reset" href="{{ route('registration') }}">Pendaftaran</a> |
                     <a class="text-reset" href="">Kritik dan Saran</a>
                 </div>
                 <div class="py-2">

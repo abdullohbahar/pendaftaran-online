@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Guest\LandingController;
+use App\Http\Controllers\Guest\RegistrationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,3 +16,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [LandingController::class, 'index'])->name('home');
+Route::get('/regulasi', [LandingController::class, 'regulation'])->name('regulation');
+Route::get('/pendaftaran', [RegistrationController::class, 'index'])->name('registration');

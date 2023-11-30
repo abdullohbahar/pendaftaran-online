@@ -11,4 +11,9 @@ class LandingController extends Controller
     {
         return view('guest.landing');
     }
+
+    public function regulation()
+    {
+        return view('guest.regulation');
+    }
 }
