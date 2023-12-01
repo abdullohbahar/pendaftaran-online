@@ -59,7 +59,7 @@
                             <a class="nav-link" href="{{ route('registration') }}">Pendaftaran</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Kritik & Saran</a>
+                            <a class="nav-link" href="{{ route('kritik') }}">Kritik & Saran</a>
                         </li>
                     </ul>
                 </div>
@@ -116,7 +116,7 @@
                     <a class="text-reset" href="/">Beranda</a> |
                     <a class="text-reset" href="{{ route('regulation') }}">Regulasi</a> |
                     <a class="text-reset" href="{{ route('registration') }}">Pendaftaran</a> |
-                    <a class="text-reset" href="">Kritik dan Saran</a>
+                    <a class="text-reset" href="{{ route('kritik') }}">Kritik dan Saran</a>
                 </div>
                 <div class="py-2">
                     <span>Copyright &copy; {{ date('Y') }} Clouds PKB versi 3.0.</span>

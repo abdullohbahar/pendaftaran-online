@@ -77,26 +77,6 @@
                 <div class="card">
                     <div class="card-body">
                         <form action="">
-                            <div class="row">
-                                <div class="col-sm-12 col-md-4">
-                                    <label class="mt-2 ml-sm-4" for=""><b>Provinsi Tujuan</b></label>
-                                </div>
-                                <div class="col-sm-12 col-md-8">
-                                    <select class="form-control" style="width: 100%" name="" id="">
-                                        <option value="">-- Pilih Provinsi Tujuan --</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="row mt-3">
-                                <div class="col-sm-12 col-md-4">
-                                    <label class="mt-2 ml-sm-4" for=""><b>PKB Tujuan</b></label>
-                                </div>
-                                <div class="col-sm-12 col-md-8">
-                                    <select class="form-control" style="width: 100%" name="" id="">
-                                        <option value="">-- Pilih PKB Tujuan --</option>
-                                    </select>
-                                </div>
-                            </div>
                             <div class="row mt-3">
                                 <div class="col-sm-12 col-md-4">
                                     <label class="mt-2 ml-sm-4" for=""><b>Permohonan</b></label>
@@ -104,6 +84,10 @@
                                 <div class="col-sm-12 col-md-8">
                                     <select class="form-control" style="width: 100%" name="" id="">
                                         <option value="">-- Pilih Permohonan --</option>
+                                        <option value="">Uji Pertama</option>
+                                        <option value="">Uji Berkala</option>
+                                        <option value="">Numpang Uji Masuk</option>
+                                        <option value="">Mutasi Masuk</option>
                                     </select>
                                 </div>
                             </div>
