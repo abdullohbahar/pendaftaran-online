@@ -76,24 +76,25 @@
             <div class="col-sm-12 col-md-7">
                 <div class="card">
                     <div class="card-body">
-                        <form action="">
+                        <form action="" id="selectPendaftaran">
                             <div class="row mt-3">
                                 <div class="col-sm-12 col-md-4">
                                     <label class="mt-2 ml-sm-4" for=""><b>Permohonan</b></label>
                                 </div>
                                 <div class="col-sm-12 col-md-8">
-                                    <select class="form-control" style="width: 100%" name="" id="">
+                                    <select class="form-control" style="width: 100%" name="" required
+                                        id="pendaftaran">
                                         <option value="">-- Pilih Permohonan --</option>
-                                        <option value="">Uji Pertama</option>
-                                        <option value="">Uji Berkala</option>
-                                        <option value="">Numpang Uji Masuk</option>
-                                        <option value="">Mutasi Masuk</option>
+                                        <option value="uji-pertama">Uji Pertama</option>
+                                        <option value="uji-berkala">Uji Berkala</option>
+                                        <option value="numpang-uji-masuk">Numpang Uji Masuk</option>
+                                        <option value="mutasi-masuk">Mutasi Masuk</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="row mt-3">
                                 <div class="col-12">
-                                    <button class="btn btn-block btn-info">
+                                    <button type="submit" class="btn btn-block btn-info">
                                         <i class="fa-regular fa-pen-to-square"></i> Daftar
                                     </button>
                                 </div>
@@ -107,4 +108,23 @@
 @endsection
 
 @push('addons-js')
+    <script>
+        $("#selectPendaftaran").on("submit", function(e) {
+            e.preventDefault();
+
+            var val = $("#pendaftaran").val();
+
+            console.log(val)
+
+            var currentURL = window.location.href;
+
+            // Pengecekan apakah ada garis miring di akhir URL
+            if (currentURL.endsWith("/")) {
+                // Menghapus garis miring dari akhir URL
+                currentURL = currentURL.slice(0, -1);
+            }
+
+            window.location.href = currentURL + '/' + val
+        })
+    </script>
 @endpush
