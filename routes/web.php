@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Guest\KritikDanSaranController;
 use App\Http\Controllers\Guest\LandingController;
+use App\Http\Controllers\Guest\PendaftaranUjiPertamaController;
 use App\Http\Controllers\Guest\RegistrationController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,3 +24,7 @@ Route::get('/pendaftaran', [RegistrationController::class, 'index'])->name('regi
 Route::get('/kritik-dan-saran', [KritikDanSaranController::class, 'index'])->name('kritik');
 Route::get('/admin/login', [AuthController::class, 'index'])->name('login');
 Route::post('/auth', [AuthController::class, 'authenticate'])->name('auth');
+
+Route::prefix('pendaftaran')->group(function () {
+    Route::get('uji-pertama', [PendaftaranUjiPertamaController::class, 'index']);
+});
