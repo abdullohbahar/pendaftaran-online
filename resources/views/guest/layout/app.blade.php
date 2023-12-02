@@ -37,7 +37,7 @@
     <header>
         <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
             <div class="container">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="/">
                     <img src="https://getbootstrap.com/docs/4.6/assets/brand/bootstrap-solid.svg" width="30"
                         height="30" class="d-inline-block align-top" alt="">
                     Bootstrap

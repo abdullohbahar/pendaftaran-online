@@ -66,9 +66,9 @@
                         </a>
                     </div>
                     <div class="col-sm-12 col-md-4">
-                        <button class="btn btn-success btn-block mt-2">
+                        <a href="{{ route('cek.pendaftaran') }}" class="btn btn-success btn-block mt-2">
                             <i class="fa-solid fa-magnifying-glass"></i> Cek Pendaftaran
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
