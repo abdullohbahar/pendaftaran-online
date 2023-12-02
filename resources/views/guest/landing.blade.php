@@ -56,14 +56,14 @@
                 <h6>"Mari daftar uji berkala kendaraan secara online"</h6>
                 <div class="row mt-3">
                     <div class="col-sm-12 col-md-4">
-                        <button class="btn btn-success btn-block mt-2">
+                        <a href="{{ route('cek.kendaraan') }}" class="btn btn-success btn-block mt-2">
                             <i class="fa-solid fa-magnifying-glass"></i> Cek Kendaraan
-                        </button>
+                        </a>
                     </div>
                     <div class="col-sm-12 col-md-4">
-                        <button class="btn btn-success btn-block mt-2">
+                        <a href="{{ route('registration') }}" class="btn btn-success btn-block mt-2">
                             <i class="fa-regular fa-pen-to-square"></i> Pendaftaran
-                        </button>
+                        </a>
                     </div>
                     <div class="col-sm-12 col-md-4">
                         <button class="btn btn-success btn-block mt-2">

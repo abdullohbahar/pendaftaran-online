@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Guest\CekKendaraanController;
 use App\Http\Controllers\Guest\KritikDanSaranController;
 use App\Http\Controllers\Guest\LandingController;
 use App\Http\Controllers\Guest\PendaftaranMutasiMasuk;
@@ -25,6 +26,8 @@ Route::get('/', [LandingController::class, 'index'])->name('home');
 Route::get('/regulasi', [LandingController::class, 'regulation'])->name('regulation');
 Route::get('/pendaftaran', [RegistrationController::class, 'index'])->name('registration');
 Route::get('/kritik-dan-saran', [KritikDanSaranController::class, 'index'])->name('kritik');
+Route::get('/cek-kendaraan', [CekKendaraanController::class, 'index'])->name('cek.kendaraan');
+
 Route::get('/admin/login', [AuthController::class, 'index'])->name('login');
 Route::post('/auth', [AuthController::class, 'authenticate'])->name('auth');
 
