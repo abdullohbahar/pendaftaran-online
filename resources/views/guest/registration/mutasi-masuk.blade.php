@@ -66,11 +66,11 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/">Beranda</a></li>
                 <li class="breadcrumb-item"><a href="{{ route('registration') }}">Pendaftaran</a></li>
-                <li class="breadcrumb-item">Numpang Uji Masuk</li>
+                <li class="breadcrumb-item">Mutasi Masuk</li>
             </ol>
         </nav>
 
-        <h2>Numpang Uji Masuk</h2>
+        <h2>Mutasi Masuk</h2>
 
         <hr>
     </div>
@@ -137,7 +137,7 @@
                                         <hr>
                                     </div>
                                     <div class="col-sm-12 col-md-4">
-                                        <label>Daerah Asal</label>
+                                        <label>Daerah Tujuan</label>
                                         <div class="input-group mb-3">
                                             <input type="text" class="form-control" name="" id="">
                                         </div>
@@ -197,7 +197,7 @@
                                             <input type="checkbox" class="custom-control-input" id="customCheck4"
                                                 required>
                                             <label class="custom-control-label" for="customCheck4">Surat Rekomendasi
-                                                Numpang Uji</label>
+                                                Mutasi uji dan Kelengkapannya</label>
                                         </div>
                                     </div>
                                 </div>
