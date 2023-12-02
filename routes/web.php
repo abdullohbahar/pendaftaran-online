@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Guest\KritikDanSaranController;
 use App\Http\Controllers\Guest\LandingController;
+use App\Http\Controllers\Guest\PendaftaranNumpangUjiMasukController;
 use App\Http\Controllers\Guest\PendaftaranUjiBerkalaController;
 use App\Http\Controllers\Guest\PendaftaranUjiPertamaController;
 use App\Http\Controllers\Guest\RegistrationController;
@@ -29,4 +30,5 @@ Route::post('/auth', [AuthController::class, 'authenticate'])->name('auth');
 Route::prefix('pendaftaran')->group(function () {
     Route::get('uji-pertama', [PendaftaranUjiPertamaController::class, 'index'])->name('uji.pertama');
     Route::get('uji-berkala', [PendaftaranUjiBerkalaController::class, 'index'])->name('uji.berkala');
+    Route::get('numpang-uji-masuk', [PendaftaranNumpangUjiMasukController::class, 'index'])->name('uji.berkala');
 });

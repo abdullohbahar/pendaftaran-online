@@ -136,23 +136,13 @@
                                     <div class="col-12">
                                         <hr>
                                     </div>
-                                    <div class="col-sm-12 col-md-6">
-                                        <label>Merek</label>
+                                    <div class="col-sm-12 col-md-4">
+                                        <label>Daerah Asal</label>
                                         <div class="input-group mb-3">
-                                            <select name="" id="" class="form-control">
-                                                <option value=""></option>
-                                            </select>
+                                            <input type="text" class="form-control" name="" id="">
                                         </div>
                                     </div>
-                                    <div class="col-sm-12 col-md-6">
-                                        <label>Tipe</label>
-                                        <div class="input-group mb-3">
-                                            <select name="" id="" class="form-control">
-                                                <option value=""></option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-6">
+                                    <div class="col-sm-12 col-md-4">
                                         <label>Jenis</label>
                                         <div class="input-group mb-3">
                                             <select name="" id="" class="form-control">
@@ -164,7 +154,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-sm-12 col-md-6">
+                                    <div class="col-sm-12 col-md-4">
                                         <label>JBB</label>
                                         <div class="input-group mb-3">
                                             <input type="number" class="form-control" name="" id="">
@@ -187,8 +177,7 @@
                                         <hr>
                                         <b>Persyaratan (Wajib Checklist Semua)</b>
                                         <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="customCheck1"
-                                                required>
+                                            <input type="checkbox" class="custom-control-input" id="customCheck1" required>
                                             <label class="custom-control-label" for="customCheck1">STNK asli dan masih
                                                 berlaku</label>
                                         </div>
