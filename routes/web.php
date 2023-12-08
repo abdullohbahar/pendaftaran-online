@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardAdminController;
+use App\Http\Controllers\Admin\KritikSaranController;
 use App\Http\Controllers\Admin\KuotaController;
 use App\Http\Controllers\Admin\MerkController;
 use App\Http\Controllers\Admin\RegulasiController;
@@ -81,5 +82,9 @@ Route::prefix('admin')->group(function () {
         Route::get('/ubah/{id}', [MerkController::class, 'edit'])->name('admin.ubah.merek');
         Route::put('/update/{id}', [MerkController::class, 'update'])->name('admin.update.merek');
         Route::delete('/hapus/{id}', [MerkController::class, 'destroy'])->name('admin.hapus.merek');
+    });
+
+    Route::prefix('kritik-saran')->group(function () {
+        Route::get('/', [KritikSaranController::class, 'index'])->name('admin.kritik.saran');
     });
 });

@@ -96,7 +96,7 @@
                                 class="nav-link"><i class="far fa-square"></i>
                                 <span>Regulasi</span></a></li>
                         <li class="{{ $active == 'kritik-saran' ? 'active' : '' }}"><a
-                                href="{{ route('admin.regulasi') }}" class="nav-link"><i class="far fa-square"></i>
+                                href="{{ route('admin.kritik.saran') }}" class="nav-link"><i class="far fa-square"></i>
                                 <span>Kritik & Saran</span></a></li>
                         <li class="nav-item dropdown {{ $active == 'kuota' || $active == 'merek' ? 'active' : '' }}">
                             <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i
@@ -104,8 +104,8 @@
                             <ul class="dropdown-menu">
                                 <li class="{{ $active == 'kuota' ? 'active' : '' }}"><a class="nav-link"
                                         href="{{ route('admin.kuota') }}">Data Kuota</a></li>
-                                <li class="{{ $active == 'merek' ? 'active' : '' }}"><a class="nav-link"
-                                        href="{{ route('admin.merek') }}">Data Merek</a></li>
+                                {{-- <li class="{{ $active == 'merek' ? 'active' : '' }}"><a class="nav-link"
+                                        href="{{ route('admin.merek') }}">Data Merek</a></li> --}}
                             </ul>
                         </li>
                     </ul>

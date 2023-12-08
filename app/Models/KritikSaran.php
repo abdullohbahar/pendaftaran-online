@@ -9,7 +9,6 @@ class KritikSaran extends Model
 {
     use HasFactory;
 
-    public $timestamps = false;
     protected $table = 'kritik_saran';
 
     protected $fillable = [
