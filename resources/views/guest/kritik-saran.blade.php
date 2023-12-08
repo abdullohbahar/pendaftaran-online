@@ -59,19 +59,20 @@
         <hr>
     </div>
 
-    <div class="container">
+    <div class="container mb-5">
         <div class="row justify-content-center">
             <div class="col-sm-12 col-md-12">
                 <div class="card">
                     <div class="card-body">
-                        <form action="">
+                        <form action="{{ route('simpan.kritik') }}" method="POST">
+                            @csrf
                             <div class="row mt-3">
                                 <div class="col-sm-12 col-md-12 col-lg-2 text-lg-right">
                                     <label class="mt-2 ml-lg-4" for=""><b>Nama</b></label>
                                 </div>
                                 <div class="col-sm-12 col-md-12 col-lg-10">
                                     <input type="text" name="nama" class="form-control" style="width: 100%"
-                                        id="">
+                                        id="" required>
                                 </div>
                             </div>
                             <div class="row mt-3">
@@ -88,8 +89,8 @@
                                     <label class="mt-2 ml-lg-4" for=""><b>No Telepon</b></label>
                                 </div>
                                 <div class="col-sm-12 col-md-12 col-lg-10">
-                                    <input type="text" name="no_telp" class="form-control" style="width: 100%"
-                                        id="">
+                                    <input type="text" name="no_telepon" class="form-control" style="width: 100%"
+                                        id="" required>
                                 </div>
                             </div>
                             <div class="row mt-3">
@@ -97,7 +98,7 @@
                                     <label class="mt-2 ml-lg-4" for=""><b>Kritik dan Saran</b></label>
                                 </div>
                                 <div class="col-sm-12 col-md-12 col-lg-10">
-                                    <textarea name="kritik_dan_saran" class="form-control" id=""></textarea>
+                                    <textarea name="kritik_saran" class="form-control" id="" required></textarea>
                                 </div>
                             </div>
                             <div class="row mt-3">
@@ -106,22 +107,22 @@
                                 </div>
                                 <div class="col-sm-12 col-md-12 col-lg-10">
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" id="sangat-puas" value="sangat-puas" name="tingkat-kepuasan"
-                                            class="custom-control-input">
+                                        <input type="radio" id="sangat-puas" value="Sangat Puas" name="tingkat_kepuasan"
+                                            class="custom-control-input" required>
                                         <label class="custom-control-label" for="sangat-puas">Sangat Puas</label>
                                     </div>
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" id="puas" value="puas" name="tingkat-kepuasan"
+                                        <input type="radio" id="puas" value="Puas" name="tingkat_kepuasan"
                                             class="custom-control-input">
                                         <label class="custom-control-label" for="puas">Puas</label>
                                     </div>
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" id="kurang-puas" value="kurang-puas" name="tingkat-kepuasan"
+                                        <input type="radio" id="kurang-puas" value="Kurang Puas" name="tingkat_kepuasan"
                                             class="custom-control-input">
                                         <label class="custom-control-label" for="kurang-puas">Kurang Puas</label>
                                     </div>
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" id="tidak-puas" value="tidak-puas" name="tingkat-kepuasan"
+                                        <input type="radio" id="tidak-puas" value="Tidak Puas" name="tingkat_kepuasan"
                                             class="custom-control-input">
                                         <label class="custom-control-label" for="tidak-puas">Tidak Puas</label>
                                     </div>
@@ -143,4 +144,26 @@
 @endsection
 
 @push('addons-js')
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    @if (session()->has('success'))
+        <script>
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+
+            Toast.fire({
+                icon: 'success',
+                title: '{{ session('success') }}'
+            })
+        </script>
+    @endif
 @endpush

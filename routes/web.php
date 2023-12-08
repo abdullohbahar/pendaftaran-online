@@ -32,6 +32,7 @@ Route::get('/', [LandingController::class, 'index'])->name('home');
 Route::get('/regulasi', [LandingController::class, 'regulation'])->name('regulation');
 Route::get('/pendaftaran', [RegistrationController::class, 'index'])->name('registration');
 Route::get('/kritik-dan-saran', [KritikDanSaranController::class, 'index'])->name('kritik');
+Route::post('/simpan-kritik-dan-saran', [KritikDanSaranController::class, 'store'])->name('simpan.kritik');
 Route::get('/cek-kendaraan', [CekKendaraanController::class, 'index'])->name('cek.kendaraan');
 Route::get('/cek-pendaftaran', [CekPendaftaranController::class, 'index'])->name('cek.pendaftaran');
 

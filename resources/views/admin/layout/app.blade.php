@@ -95,6 +95,9 @@
                         <li class="{{ $active == 'regulasi' ? 'active' : '' }}"><a href="{{ route('admin.regulasi') }}"
                                 class="nav-link"><i class="far fa-square"></i>
                                 <span>Regulasi</span></a></li>
+                        <li class="{{ $active == 'kritik-saran' ? 'active' : '' }}"><a
+                                href="{{ route('admin.regulasi') }}" class="nav-link"><i class="far fa-square"></i>
+                                <span>Kritik & Saran</span></a></li>
                         <li class="nav-item dropdown {{ $active == 'kuota' || $active == 'merek' ? 'active' : '' }}">
                             <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i
                                     class="fas fa-boxes"></i> <span>Master Data</span></a>
