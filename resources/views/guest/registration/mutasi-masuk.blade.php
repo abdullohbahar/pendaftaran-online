@@ -81,11 +81,20 @@
                 <div class="card">
                     <div class="card-body">
                         <form action="">
+                            {{-- jika data ditemukan tampilkan alert berikut --}}
+                            <div class="alert alert-success text-capitalize" role="alert" hidden>
+                                Data Ditemukan. harap melengkapi data dibawah
+                            </div>
+                            {{-- jika data tidak ditemukan tampilkan alert berikut --}}
+                            <div class="alert alert-danger" role="alert" hidden>
+                                Data Tidak Ditemukan
+                            </div>
+
                             <div class="row">
                                 <div class="col-sm-12 col-md-6">
                                     <label>Tanggal booking</label>
                                     <div class="input-group mb-3">
-                                        <input type="text" class="form-control" id="tanggalBooking">
+                                        <input type="text" class="form-control" id="tanggalBooking" required>
                                         <div class="input-group-append">
                                             <button class="btn btn-success" id="cekKuota" type="button">Cek
                                                 Kuota</button>
@@ -95,7 +104,7 @@
                                 <div class="col-sm-12 col-md-6">
                                     <label>Nomor Uji</label>
                                     <div class="input-group mb-3">
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" id="nouji">
                                         <div class="input-group-append">
                                             <button class="btn btn-success" id="search" type="button">Cari Data
                                                 Kendaraan</button>
@@ -177,7 +186,8 @@
                                         <hr>
                                         <b>Persyaratan (Wajib Checklist Semua)</b>
                                         <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="customCheck1" required>
+                                            <input type="checkbox" class="custom-control-input" id="customCheck1"
+                                                required>
                                             <label class="custom-control-label" for="customCheck1">STNK asli dan masih
                                                 berlaku</label>
                                         </div>
@@ -233,6 +243,7 @@
 @push('addons-js')
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="{{ asset('./landing-assets/js/cek-kuota.js') }}"></script>
+    <script src="{{ asset('./landing-assets/js/cari-data-kendaraan.js') }}"></script>
 
     <script src="{{ asset('./landing-assets/js/owner-address.js') }}"></script>
     <script src="{{ asset('./landing-assets/js/applicant-address.js') }}"></script>
@@ -260,9 +271,5 @@
                 html: true
             });
         });
-
-        $("body").on("click", "#search", function() {
-            $("#showResult").attr("hidden", false)
-        })
     </script>
 @endpush

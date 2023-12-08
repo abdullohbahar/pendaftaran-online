@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\MerkController;
 use App\Http\Controllers\Admin\RegulasiController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\CariDatakendaraanController;
 use App\Http\Controllers\CekKuotaController;
 use App\Http\Controllers\Guest\CekKendaraanController;
 use App\Http\Controllers\Guest\CekPendaftaranController;
@@ -41,6 +42,7 @@ Route::get('/cek-pendaftaran', [CekPendaftaranController::class, 'index'])->name
 Route::get('/admin/login', [AuthController::class, 'index'])->name('login');
 Route::post('/auth', [AuthController::class, 'authenticate'])->name('auth');
 Route::get('cek-kuota', CekKuotaController::class)->name('cek.kuota');
+Route::get('cari-data-kendaraan/{nouji}', CariDatakendaraanController::class)->name('cari.data.kendaraan');
 
 Route::prefix('pendaftaran')->group(function () {
     Route::get('uji-pertama', [PendaftaranUjiPertamaController::class, 'index'])->name('uji.pertama');
