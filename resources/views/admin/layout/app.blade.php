@@ -96,12 +96,12 @@
                                 class="nav-link"><i class="far fa-square"></i>
                                 <span>Regulasi</span></a></li>
                         <li
-                            class="nav-item dropdown {{ $active == 'product' || $active == 'product-category' ? 'active' : '' }}">
+                            class="nav-item dropdown {{ $active == 'kuota' || $active == 'product-category' ? 'active' : '' }}">
                             <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i
                                     class="fas fa-boxes"></i> <span>Master Data</span></a>
                             <ul class="dropdown-menu">
-                                <li class="{{ $active == 'product' ? 'active' : '' }}"><a class="nav-link"
-                                        href="">Data Kuota</a></li>
+                                <li class="{{ $active == 'kuota' ? 'active' : '' }}"><a class="nav-link"
+                                        href="{{ route('admin.kuota') }}">Data Kuota</a></li>
                                 <li class="{{ $active == 'product' ? 'active' : '' }}"><a class="nav-link"
                                         href="">Data Merek</a></li>
                             </ul>

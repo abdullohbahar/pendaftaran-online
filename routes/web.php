@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardAdminController;
+use App\Http\Controllers\Admin\KuotaController;
 use App\Http\Controllers\Admin\RegulasiController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Auth\AuthController;
@@ -60,5 +61,14 @@ Route::prefix('admin')->group(function () {
         Route::get('/ubah/{id}', [RegulasiController::class, 'edit'])->name('admin.ubah.regulasi');
         Route::put('/update/{id}', [RegulasiController::class, 'update'])->name('admin.update.regulasi');
         Route::delete('/hapus/{id}', [RegulasiController::class, 'destroy'])->name('admin.hapus.regulasi');
+    });
+
+    Route::prefix('kuota')->group(function () {
+        Route::get('/', [KuotaController::class, 'index'])->name('admin.kuota');
+        Route::get('/tambah', [KuotaController::class, 'create'])->name('admin.tambah.kuota');
+        Route::post('/simpan', [KuotaController::class, 'store'])->name('admin.simpan.kuota');
+        Route::get('/ubah/{id}', [KuotaController::class, 'edit'])->name('admin.ubah.kuota');
+        Route::put('/update/{id}', [KuotaController::class, 'update'])->name('admin.update.kuota');
+        Route::delete('/hapus/{id}', [KuotaController::class, 'destroy'])->name('admin.hapus.kuota');
     });
 });

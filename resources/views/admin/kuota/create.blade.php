@@ -1,7 +1,7 @@
 @extends('admin.layout.app')
 
 @section('title')
-    Tambah Regulasi
+    Tambah kuota
 @endsection
 
 @push('addons-css')
@@ -12,50 +12,36 @@
     <div class="main-content">
         <section class="section">
             <div class="section-header">
-                <h1>Tambah Regulasi</h1>
+                <h1>Tambah kuota</h1>
             </div>
 
             <div class="section-body">
                 <div class="card">
                     <div class="card-body">
-                        <form action="{{ route('admin.simpan.regulasi') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('admin.simpan.kuota') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
                                     <div class="form-group">
-                                        <label for="">Nama Dokumen</label>
-                                        <input type="text" class="form-control" name="nama_dokumen" id=""
-                                            required>
-                                    </div>
-                                </div>
-                                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                                    <div class="form-group">
-                                        <label for="">Tahun Terbit</label>
-                                        <input type="number" class="form-control" name="tahun_terbit" id=""
-                                            required maxlength="4" oninput="this.value=this.value.slice(0,this.maxLength)">
-                                    </div>
-                                </div>
-                                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                                    <div class="form-group">
-                                        <label for="">Jenis</label>
-                                        <input type="text" class="form-control" name="jenis" id="" required>
-                                    </div>
-                                </div>
-                                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                                    <div class="form-group">
-                                        <label>File</label>
-                                        <input type="file" name="file"
-                                            class="form-control @error('file') is-invalid @enderror" id="fileUpload"
-                                            required>
-                                        @error('file')
+                                        <label for="">Tanggal</label>
+                                        <input type="date" class="form-control @error('tanggal') is-invalid @enderror"
+                                            name="tanggal" value="{{ old('tanggal') }}" id="" required>
+                                        @error('tanggal')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
                                             </div>
                                         @enderror
                                     </div>
                                 </div>
+                                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                    <div class="form-group">
+                                        <label for="">Kuota</label>
+                                        <input type="number" class="form-control" value="{{ old('kuota') }}"
+                                            name="kuota" id="" required>
+                                    </div>
+                                </div>
                                 <div class="col-12">
-                                    <button type="submit" class="btn btn-success btn-block">Simpan Regulasi</button>
+                                    <button type="submit" class="btn btn-success btn-block">Simpan Kuota</button>
                                 </div>
                             </div>
                         </form>
