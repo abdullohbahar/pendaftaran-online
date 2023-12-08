@@ -26,18 +26,12 @@
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel"
         style="background-color: rgb(237, 235, 235)">
         <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="https://source.unsplash.com/1920x720?network" style="object-fit:contain;" class="d-block w-100"
-                    alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="https://source.unsplash.com/1920x720?mountain" style="object-fit:contain;" class="d-block w-100"
-                    alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="https://source.unsplash.com/1920x720?flower" style="object-fit:contain;" class="d-block w-100"
-                    alt="...">
-            </div>
+            @foreach ($sliders as $key => $slider)
+                <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
+                    <img src="{{ asset($slider->gambar) }}" style="object-fit:contain;" class="d-block w-100"
+                        alt="...">
+                </div>
+            @endforeach
         </div>
         <button class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>

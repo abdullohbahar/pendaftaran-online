@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardAdminController;
+use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Guest\CekKendaraanController;
 use App\Http\Controllers\Guest\CekPendaftaranController;
@@ -43,4 +44,11 @@ Route::prefix('pendaftaran')->group(function () {
 
 Route::prefix('admin')->group(function () {
     Route::get('dashboard', [DashboardAdminController::class, 'index'])->name('admin.dashboard');
+
+    Route::prefix('slider')->group(function () {
+        Route::get('/', [SliderController::class, 'index'])->name('admin.slider');
+        Route::get('/tambah', [SliderController::class, 'create'])->name('admin.tambah.slider');
+        Route::post('/simpan', [SliderController::class, 'store'])->name('admin.simpan.slider');
+        Route::delete('/hapus/{id}', [SliderController::class, 'destroy'])->name('admin.hapus.slider');
+    });
 });

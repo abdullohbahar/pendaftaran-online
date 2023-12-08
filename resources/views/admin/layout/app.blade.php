@@ -93,6 +93,12 @@
                         <li class="{{ $active == 'pendaftaran' ? 'active' : '' }}"><a class="nav-link"><i
                                     class="fas fa-users"></i>
                                 <span>Data Pendaftaran</span></a></li>
+                        <li class="{{ $active == 'slider' ? 'active' : '' }}"><a href="{{ route('admin.slider') }}"
+                                class="nav-link"><i class="far fa-square"></i>
+                                <span>Slider</span></a></li>
+                        <li class="{{ $active == 'pendaftaran' ? 'active' : '' }}"><a class="nav-link"><i
+                                    class="far fa-square"></i>
+                                <span>Regulasi</span></a></li>
                         <li
                             class="nav-item dropdown {{ $active == 'product' || $active == 'product-category' ? 'active' : '' }}">
                             <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i
