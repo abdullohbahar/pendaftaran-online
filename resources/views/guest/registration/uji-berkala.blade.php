@@ -275,9 +275,5 @@
                 html: true
             });
         });
-
-        $("body").on("click", "#search", function() {
-            $("#showResult").attr("hidden", false)
-        })
     </script>
 @endpush
