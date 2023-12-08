@@ -1,10 +1,14 @@
 @extends('admin.layout.app')
 
 @section('title')
-    Slider
+    Regulasi
 @endsection
 
 @push('addons-css')
+    <link rel="stylesheet"
+        href="{{ asset('./dashboard-assets/library/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}">
+    <link rel="stylesheet"
+        href="{{ asset('./dashboard-assets/library/datatables.net-select-bs4/css/select.bootstrap4.min.css') }}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 @endpush
 
@@ -13,7 +17,7 @@
     <div class="main-content">
         <section class="section">
             <div class="section-header">
-                <h1>Slider</h1>
+                <h1>Regulasi</h1>
             </div>
 
             <div class="section-body">
@@ -23,19 +27,22 @@
                             <div class="card-header">
                                 <div class="row justify-content-end">
                                     <div class="col-12 text-end">
-                                        <a href="{{ route('admin.tambah.slider') }}" class="btn btn-success">Tambah
-                                            Slider</a>
+                                        <a href="{{ route('admin.tambah.regulasi') }}" class="btn btn-success">Tambah
+                                            Regulasi</a>
                                     </div>
                                 </div>
                             </div>
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-12">
-                                        <table class="table table-bordered table-striped">
+                                        <table class="table table-bordered table-striped" id="table1">
                                             <thead>
                                                 <tr>
                                                     <th>No</th>
-                                                    <th>Gambar</th>
+                                                    <th>Nama Dokumen</th>
+                                                    <th>Tahun Terbit</th>
+                                                    <th>Jenis</th>
+                                                    <th>File</th>
                                                     <th>Aksi</th>
                                                 </tr>
                                             </thead>
@@ -43,16 +50,30 @@
                                                 @php
                                                     $no = 1;
                                                 @endphp
-                                                @foreach ($sliders as $slider)
+                                                @foreach ($regulasi as $regulasi)
                                                     <tr>
                                                         <td>{{ $no++ }}</td>
                                                         <td>
-                                                            <img src="{{ asset($slider->gambar) }}" class="w-50 img-fluid"
-                                                                alt="">
+                                                            {{ $regulasi->nama_dokumen }}
                                                         </td>
                                                         <td>
-                                                            <button class="btn btn-danger" id="removeBtn"
-                                                                data-id="{{ $slider->id }}">Hapus</button>
+                                                            {{ $regulasi->tahun_terbit }}
+                                                        </td>
+                                                        <td>
+                                                            {{ $regulasi->jenis }}
+                                                        </td>
+                                                        <td>
+                                                            <a target="_blank" href="{{ asset($regulasi->file) }}"
+                                                                class="btn btn-primary">Lihat File</a>
+                                                        </td>
+                                                        <td>
+                                                            <div class="btn-group" role="group"
+                                                                aria-label="Basic example">
+                                                                <a href="{{ route('admin.ubah.regulasi', $regulasi->id) }}"
+                                                                    type="button" class="btn btn-warning">Ubah</a>
+                                                                <button class="btn btn-danger" id="removeBtn"
+                                                                    data-id="{{ $regulasi->id }}">Hapus</button>
+                                                            </div>
                                                         </td>
                                                     </tr>
                                                 @endforeach
@@ -70,7 +91,20 @@
 @endsection
 
 @push('addons-js')
+    <!-- JS Libraies -->
+    <script src="{{ asset('./dashboard-assets/library/datatables/media/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('./dashboard-assets/library/datatables.net-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('./dashboard-assets/library/datatables.net-select-bs4/js/select.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('./dashboard-assets/assets/js/page/modules-datatables.js') }}"></script>
+
     <script>
+        $("#table1").dataTable({
+            columnDefs: [{
+                sortable: false,
+                targets: [3]
+            }],
+        });
+
         var token = $('meta[name="csrf-token"]').attr('content');
         $.ajaxSetup({
             headers: {
@@ -95,7 +129,7 @@
             }).then((result) => {
                 if (result.isConfirmed) {
                     $.ajax({
-                        url: '/admin/slider/hapus/' + id,
+                        url: '/admin/regulasi/hapus/' + id,
                         type: 'DELETE',
                         success: function(response) {
                             if (response.code == 200) {

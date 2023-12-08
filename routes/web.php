@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardAdminController;
+use App\Http\Controllers\Admin\RegulasiController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Guest\CekKendaraanController;
@@ -50,5 +51,14 @@ Route::prefix('admin')->group(function () {
         Route::get('/tambah', [SliderController::class, 'create'])->name('admin.tambah.slider');
         Route::post('/simpan', [SliderController::class, 'store'])->name('admin.simpan.slider');
         Route::delete('/hapus/{id}', [SliderController::class, 'destroy'])->name('admin.hapus.slider');
+    });
+
+    Route::prefix('regulasi')->group(function () {
+        Route::get('/', [RegulasiController::class, 'index'])->name('admin.regulasi');
+        Route::get('/tambah', [RegulasiController::class, 'create'])->name('admin.tambah.regulasi');
+        Route::post('/simpan', [RegulasiController::class, 'store'])->name('admin.simpan.regulasi');
+        Route::get('/ubah/{id}', [RegulasiController::class, 'edit'])->name('admin.ubah.regulasi');
+        Route::put('/update/{id}', [RegulasiController::class, 'update'])->name('admin.update.regulasi');
+        Route::delete('/hapus/{id}', [RegulasiController::class, 'destroy'])->name('admin.hapus.regulasi');
     });
 });

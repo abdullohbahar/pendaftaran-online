@@ -21,10 +21,6 @@
     <link rel="stylesheet" href="{{ asset('./dashboard-assets/assets/css/components.css') }}">
 
     <style>
-        label {
-            font-size: 18px !important;
-        }
-
         .loaders {
             width: 48px;
             height: 48px;
@@ -96,8 +92,8 @@
                         <li class="{{ $active == 'slider' ? 'active' : '' }}"><a href="{{ route('admin.slider') }}"
                                 class="nav-link"><i class="far fa-square"></i>
                                 <span>Slider</span></a></li>
-                        <li class="{{ $active == 'pendaftaran' ? 'active' : '' }}"><a class="nav-link"><i
-                                    class="far fa-square"></i>
+                        <li class="{{ $active == 'regulasi' ? 'active' : '' }}"><a href="{{ route('admin.regulasi') }}"
+                                class="nav-link"><i class="far fa-square"></i>
                                 <span>Regulasi</span></a></li>
                         <li
                             class="nav-item dropdown {{ $active == 'product' || $active == 'product-category' ? 'active' : '' }}">

@@ -32,17 +32,22 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>ini nama</td>
-                            <td>2023</td>
-                            <td>adsf</td>
-                            <td>
-                                <a href="" class="btn btn-info">
-                                    <i class="fa-solid fa-download"></i>
-                                </a>
-                            </td>
-                        </tr>
+                        @php
+                            $no = 1;
+                        @endphp
+                        @foreach ($regulasi as $regulasi)
+                            <tr>
+                                <td>{{ $no++ }}</td>
+                                <td>{{ $regulasi->nama_dokumen }}</td>
+                                <td>{{ $regulasi->tahun_terbit }}</td>
+                                <td>{{ $regulasi->jenis }}</td>
+                                <td>
+                                    <a href="{{ asset($regulasi->file) }}" target="_blank" class="btn btn-info">
+                                        <i class="fa-solid fa-download"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
