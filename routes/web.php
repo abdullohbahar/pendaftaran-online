@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\DashboardAdminController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Guest\CekKendaraanController;
 use App\Http\Controllers\Guest\CekPendaftaranController;
@@ -38,4 +39,8 @@ Route::prefix('pendaftaran')->group(function () {
     Route::get('uji-berkala', [PendaftaranUjiBerkalaController::class, 'index'])->name('uji.berkala');
     Route::get('numpang-uji-masuk', [PendaftaranNumpangUjiMasukController::class, 'index'])->name('numpang.uji.masuk');
     Route::get('mutasi-masuk', [PendaftaranMutasiMasuk::class, 'index'])->name('mutasi.masuk');
+});
+
+Route::prefix('admin')->group(function () {
+    Route::get('dashboard', [DashboardAdminController::class, 'index'])->name('admin.dashboard');
 });

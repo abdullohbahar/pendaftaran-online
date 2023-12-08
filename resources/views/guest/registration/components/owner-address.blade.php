@@ -1,4 +1,4 @@
-                            <div class="row mt-4 col-lg-3 mt-2">
+                            <div class="row mt-4 mt-2">
                                 <div class="col-12">
                                     <b>Alamat Pemilik</b>
                                 </div>
