@@ -26,18 +26,12 @@
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel"
         style="background-color: rgb(237, 235, 235)">
         <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="https://source.unsplash.com/1920x720?network" style="object-fit:contain;" class="d-block w-100"
-                    alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="https://source.unsplash.com/1920x720?mountain" style="object-fit:contain;" class="d-block w-100"
-                    alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="https://source.unsplash.com/1920x720?flower" style="object-fit:contain;" class="d-block w-100"
-                    alt="...">
-            </div>
+            @foreach ($sliders as $key => $slider)
+                <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
+                    <img src="{{ asset($slider->gambar) }}" style="object-fit:contain;" class="d-block w-100"
+                        alt="...">
+                </div>
+            @endforeach
         </div>
         <button class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -56,19 +50,19 @@
                 <h6>"Mari daftar uji berkala kendaraan secara online"</h6>
                 <div class="row mt-3">
                     <div class="col-sm-12 col-md-4">
-                        <button class="btn btn-success btn-block mt-2">
+                        <a href="{{ route('cek.kendaraan') }}" class="btn btn-success btn-block mt-2">
                             <i class="fa-solid fa-magnifying-glass"></i> Cek Kendaraan
-                        </button>
+                        </a>
                     </div>
                     <div class="col-sm-12 col-md-4">
-                        <button class="btn btn-success btn-block mt-2">
+                        <a href="{{ route('registration') }}" class="btn btn-success btn-block mt-2">
                             <i class="fa-regular fa-pen-to-square"></i> Pendaftaran
-                        </button>
+                        </a>
                     </div>
                     <div class="col-sm-12 col-md-4">
-                        <button class="btn btn-success btn-block mt-2">
+                        <a href="{{ route('cek.pendaftaran') }}" class="btn btn-success btn-block mt-2">
                             <i class="fa-solid fa-magnifying-glass"></i> Cek Pendaftaran
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>

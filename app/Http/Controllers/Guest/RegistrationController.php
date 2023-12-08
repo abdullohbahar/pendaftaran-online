@@ -9,6 +9,6 @@ class RegistrationController extends Controller
 {
     public function index()
     {
-        return view('guest.registration');
+        return view('guest.registration.registration');
     }
 }

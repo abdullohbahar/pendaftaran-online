@@ -37,7 +37,7 @@
     <header>
         <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
             <div class="container">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="/">
                     <img src="https://getbootstrap.com/docs/4.6/assets/brand/bootstrap-solid.svg" width="30"
                         height="30" class="d-inline-block align-top" alt="">
                     Bootstrap
@@ -59,7 +59,7 @@
                             <a class="nav-link" href="{{ route('registration') }}">Pendaftaran</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Kritik & Saran</a>
+                            <a class="nav-link" href="{{ route('kritik') }}">Kritik & Saran</a>
                         </li>
                     </ul>
                 </div>
@@ -116,7 +116,7 @@
                     <a class="text-reset" href="/">Beranda</a> |
                     <a class="text-reset" href="{{ route('regulation') }}">Regulasi</a> |
                     <a class="text-reset" href="{{ route('registration') }}">Pendaftaran</a> |
-                    <a class="text-reset" href="">Kritik dan Saran</a>
+                    <a class="text-reset" href="{{ route('kritik') }}">Kritik dan Saran</a>
                 </div>
                 <div class="py-2">
                     <span>Copyright &copy; {{ date('Y') }} Clouds PKB versi 3.0.</span>
@@ -125,9 +125,8 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
         integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
     </script>
