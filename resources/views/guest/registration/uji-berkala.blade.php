@@ -85,9 +85,9 @@
                                 <div class="col-sm-12 col-md-6">
                                     <label>Tanggal booking</label>
                                     <div class="input-group mb-3">
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" id="tanggalBooking">
                                         <div class="input-group-append">
-                                            <button class="btn btn-success" type="button">Cek
+                                            <button class="btn btn-success" id="cekKuota" type="button">Cek
                                                 Kuota</button>
                                         </div>
                                     </div>
@@ -232,10 +232,12 @@
             </div>
         </div>
     </div>
+    @include('guest.registration.components.modal-cek-kuota')
 @endsection
 
 @push('addons-js')
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="{{ asset('./landing-assets/js/cek-kuota.js') }}"></script>
 
     <script src="{{ asset('./landing-assets/js/owner-address.js') }}"></script>
     <script src="{{ asset('./landing-assets/js/applicant-address.js') }}"></script>
