@@ -46,7 +46,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @php
+                                                {{-- @php
                                                     $no = 1;
                                                 @endphp
                                                 @foreach ($kuota as $kuota)
@@ -71,7 +71,7 @@
                                                             </div>
                                                         </td>
                                                     </tr>
-                                                @endforeach
+                                                @endforeach --}}
                                             </tbody>
                                         </table>
                                     </div>
@@ -93,11 +93,47 @@
     <script src="{{ asset('./dashboard-assets/assets/js/page/modules-datatables.js') }}"></script>
 
     <script>
-        $("#table1").dataTable({
-            columnDefs: [{
-                sortable: false,
-                targets: [3]
-            }],
+        $("#table1").DataTable({
+            processing: true,
+            serverSide: true,
+            paging: true,
+            lengthChange: true,
+            searching: true,
+            ordering: true,
+            info: true,
+            autoWidth: false,
+            responsive: true,
+            ajax: {
+                url: "{!! url()->current() !!}",
+            },
+            columns: [{
+                    title: "No",
+                    data: null,
+                    searchable: false,
+                    orderable: false,
+                    width: "50px",
+                    className: "text-center border-bottom",
+                    render: (data, type, row, meta) => {
+                        return meta.row + meta.settings._iDisplayStart + 1;
+                    },
+                },
+                {
+                    data: "tanggal",
+                    name: "tanggal",
+                },
+                {
+                    data: "kuota",
+                    name: "kuota",
+                },
+                {
+                    data: "tersedia",
+                    name: "tersedia",
+                },
+                {
+                    data: "action",
+                    name: "action",
+                },
+            ],
         });
 
         var token = $('meta[name="csrf-token"]').attr('content');

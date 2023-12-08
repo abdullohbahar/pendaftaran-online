@@ -5,16 +5,28 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Kuota;
 use Illuminate\Http\Request;
+use DataTables;
 
 class KuotaController extends Controller
 {
     public function index()
     {
-        $kuota = Kuota::orderBy('tanggal', 'desc')->get();
+        if (request()->ajax()) {
+            $query = Kuota::orderBy('tanggal', 'desc')->get();
+
+            return Datatables::of($query)
+                ->addColumn('action', function ($item) {
+                    return '<div class="btn-group" role="group" aria-label="Basic example">
+                                <a href="./kuota/ubah/' . $item->id . '" type="button" class="btn btn-warning">Ubah</a>
+                                <button class="btn btn-danger" id="removeBtn" data-id="{{ $kuota->id }}">Hapus</button>
+                            </div>';
+                })
+                ->rawColumns(['action'])
+                ->make();
+        }
 
         $data = [
             'active' => 'kuota',
-            'kuota' => $kuota
         ];
 
         return view('admin.kuota.index', $data);
