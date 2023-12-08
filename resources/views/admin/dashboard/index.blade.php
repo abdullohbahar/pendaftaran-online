@@ -21,21 +21,6 @@
                         <div class="card">
                             <div class="card-body">
                                 <table style="font-size: 14pt">
-                                    <tr>
-                                        <td>Pengunjung Hari Ini</td>
-                                        <td>:</td>
-                                        {{-- <td>{{ $todayVisitor }}</td> --}}
-                                    </tr>
-                                    <tr>
-                                        <td>Total Pengunjung</td>
-                                        <td>:</td>
-                                        {{-- <td>{{ $totalVisitor }}</td> --}}
-                                    </tr>
-                                    <tr>
-                                        <td>Pengunjung Online</td>
-                                        <td>:</td>
-                                        {{-- <td>{{ $onlineVisitor }}</td> --}}
-                                    </tr>
                                 </table>
                             </div>
                         </div>
