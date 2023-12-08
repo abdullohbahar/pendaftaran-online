@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\DashboardAdminController;
 use App\Http\Controllers\Admin\KuotaController;
+use App\Http\Controllers\Admin\MerkController;
 use App\Http\Controllers\Admin\RegulasiController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Auth\AuthController;
@@ -70,5 +71,14 @@ Route::prefix('admin')->group(function () {
         Route::get('/ubah/{id}', [KuotaController::class, 'edit'])->name('admin.ubah.kuota');
         Route::put('/update/{id}', [KuotaController::class, 'update'])->name('admin.update.kuota');
         Route::delete('/hapus/{id}', [KuotaController::class, 'destroy'])->name('admin.hapus.kuota');
+    });
+
+    Route::prefix('merek')->group(function () {
+        Route::get('/', [MerkController::class, 'index'])->name('admin.merek');
+        Route::get('/tambah', [MerkController::class, 'create'])->name('admin.tambah.merek');
+        Route::post('/simpan', [MerkController::class, 'store'])->name('admin.simpan.merek');
+        Route::get('/ubah/{id}', [MerkController::class, 'edit'])->name('admin.ubah.merek');
+        Route::put('/update/{id}', [MerkController::class, 'update'])->name('admin.update.merek');
+        Route::delete('/hapus/{id}', [MerkController::class, 'destroy'])->name('admin.hapus.merek');
     });
 });

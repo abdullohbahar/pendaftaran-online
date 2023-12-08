@@ -1,7 +1,7 @@
 @extends('admin.layout.app')
 
 @section('title')
-    Kuota
+    Merek
 @endsection
 
 @push('addons-css')
@@ -17,7 +17,7 @@
     <div class="main-content">
         <section class="section">
             <div class="section-header">
-                <h1>Kuota</h1>
+                <h1>Merek</h1>
             </div>
 
             <div class="section-body">
@@ -27,8 +27,8 @@
                             <div class="card-header">
                                 <div class="row justify-content-end">
                                     <div class="col-12 text-end">
-                                        <a href="{{ route('admin.tambah.kuota') }}" class="btn btn-success">Tambah
-                                            Kuota</a>
+                                        <a href="{{ route('admin.tambah.merek') }}" class="btn btn-success">Tambah
+                                            Merek</a>
                                     </div>
                                 </div>
                             </div>
@@ -39,9 +39,7 @@
                                             <thead>
                                                 <tr>
                                                     <th>No</th>
-                                                    <th>Tanggal</th>
-                                                    <th>Kuota</th>
-                                                    <th>Tersedia</th>
+                                                    <th>Merek</th>
                                                     <th>Aksi</th>
                                                 </tr>
                                             </thead>
@@ -92,16 +90,8 @@
                     },
                 },
                 {
-                    data: "tanggal",
-                    name: "tanggal",
-                },
-                {
-                    data: "kuota",
-                    name: "kuota",
-                },
-                {
-                    data: "tersedia",
-                    name: "tersedia",
+                    data: "merek",
+                    name: "merek",
                 },
                 {
                     data: "action",
@@ -134,7 +124,7 @@
             }).then((result) => {
                 if (result.isConfirmed) {
                     $.ajax({
-                        url: '/admin/kuota/hapus/' + id,
+                        url: '/admin/merek/hapus/' + id,
                         type: 'DELETE',
                         success: function(response) {
                             if (response.code == 200) {

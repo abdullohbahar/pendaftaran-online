@@ -18,7 +18,7 @@ class KuotaController extends Controller
                 ->addColumn('action', function ($item) {
                     return '<div class="btn-group" role="group" aria-label="Basic example">
                                 <a href="./kuota/ubah/' . $item->id . '" type="button" class="btn btn-warning">Ubah</a>
-                                <button class="btn btn-danger" id="removeBtn" data-id="{{ $kuota->id }}">Hapus</button>
+                                <button class="btn btn-danger" id="removeBtn" data-id="' . $item->id . '">Hapus</button>
                             </div>';
                 })
                 ->rawColumns(['action'])
