@@ -175,7 +175,7 @@
                                     <div class="col-sm-12 col-md-6">
                                         <label>JBB</label>
                                         <div class="input-group mb-3">
-                                            <input type="number" class="form-control" name="" id="">
+                                            <input type="number" class="form-control" name="" id="berat">
                                             <div class="input-group-append">
                                                 <button class="btn btn-info" type="button" data-toggle="tooltip"
                                                     data-html="true" id="tooltipJBB">?</button>
@@ -186,8 +186,8 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-6"></div>
-                                    <div class="col-6" id="resultCekTarif">
+                                    <div class="col-sm-12 col-md-6"></div>
+                                    <div class="col-sm-12 col-md-6" id="resultCekTarif">
                                     </div>
                                 </div>
                                 <div class="row">
@@ -246,6 +246,7 @@
 @push('addons-js')
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="{{ asset('./landing-assets/js/cek-kuota.js') }}"></script>
+    <script src="{{ asset('./landing-assets/js/cek-tarif.js') }}"></script>
     <script src="{{ asset('./landing-assets/js/cari-data-kendaraan.js') }}"></script>
 
 
