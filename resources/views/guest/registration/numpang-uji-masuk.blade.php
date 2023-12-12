@@ -94,8 +94,8 @@
                                 <div class="col-sm-12 col-md-6">
                                     <label>Tanggal booking</label>
                                     <div class="input-group mb-3">
-                                        <input type="text" name="tglpendaftaran" class="form-control"
-                                            id="tanggalBooking">
+                                        <input type="text" name="tglpendaftaran" class="form-control" id="tanggalBooking"
+                                            readonly>
                                         <div class="input-group-append">
                                             <button class="btn btn-success" id="cekKuota" type="button">Cek
                                                 Kuota</button>

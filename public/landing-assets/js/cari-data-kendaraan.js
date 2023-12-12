@@ -82,6 +82,12 @@ $("body").on("click", "#search", function () {
                     $("#tipe").val(response.data.tipe);
                     $("#jenis").val(response.data.jenis);
                     $("#berat").val(response.data.jbb);
+                    $("#daerah")
+                        .val(response.data.kodewilayah)
+                        .trigger("change");
+                    $("#daerahTujuan")
+                        .val(response.data.kodewilayah)
+                        .trigger("change");
                 }
             } else {
                 $(".alert-success").attr("hidden", true);

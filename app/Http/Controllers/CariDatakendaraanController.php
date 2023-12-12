@@ -28,6 +28,7 @@ class CariDatakendaraanController extends Controller
                 'identitaskendaraans.merek',
                 'identitaskendaraans.tipe',
                 'identitaskendaraans.model',
+                'identitaskendaraans.kodewilayah',
                 'identitaskendaraans.alamat as alamat_pemilik',
                 'kodepenerbitan.keterangan as status_uji_terakhir',
                 'datakendaraans.jbb'

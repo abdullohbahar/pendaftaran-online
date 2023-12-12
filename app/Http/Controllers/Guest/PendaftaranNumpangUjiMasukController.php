@@ -67,7 +67,7 @@ class PendaftaranNumpangUjiMasukController extends Controller
             $dataPendaftaran = [
                 'identitaskendaraan_id' => $identitasKendaraan->id,
                 'idx' => NULL, // tidak diisi,
-                'kodepenerbitans_id' => 2,
+                'kodepenerbitans_id' => 5,
                 'tglpendaftaran' => $request->tglpendaftaran,
                 'tglbayar' => $request->tglpendaftaran,
                 'namapemohon' => $request->namapemohon,
@@ -131,8 +131,6 @@ class PendaftaranNumpangUjiMasukController extends Controller
             return to_route('bukti.pendaftaran', $saveTransaksi->id)->with('success', 'Berhasil Melakukan Pendaftaran');
         } catch (Exception $e) {
             Log::critical($e);
-
-            dd($e);
 
             return redirect()->back()->with('failed', 'Gagal Melakukan Pendaftaran')->withInput();
         }
