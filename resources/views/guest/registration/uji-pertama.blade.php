@@ -80,12 +80,14 @@
             <div class="col-sm-12 col-md-12">
                 <div class="card">
                     <div class="card-body">
-                        <form action="">
+                        <form action="{{ route('simpan.uji.pertama') }}" method="POST">
+                            @csrf
                             <div class="row">
                                 <div class="col-sm-12 col-md-3">
                                     <label>Tanggal booking</label>
                                     <div class="input-group mb-3">
-                                        <input type="text" class="form-control" id="tanggalBooking">
+                                        <input type="text" class="form-control" id="tanggalBooking"
+                                            name="tglpendaftaran">
                                         <div class="input-group-append">
                                             <button class="btn btn-success" id="cekKuota" type="button">Cek
                                                 Kuota</button>
@@ -94,23 +96,28 @@
                                 </div>
                                 <div class="col-sm-12 col-md-3">
                                     <label>No Kendaraan (Awal)</label>
-                                    <input type="text" class="form-control no-kend" maxlength="2">
+                                    <input type="text" class="form-control no-kend" name="no_kendaraan_awal"
+                                        maxlength="2">
                                 </div>
                                 <div class="col-sm-12 col-md-3">
                                     <label>No Kendaraan (Tengah)</label>
-                                    <input type="text" class="form-control no-kend" maxlength="4">
+                                    <input type="text" class="form-control no-kend" name="no_kendaraan_tengah"
+                                        maxlength="4">
                                 </div>
                                 <div class="col-sm-12 col-md-3">
                                     <label>No Kendaraan (Belakang)</label>
-                                    <input type="text" class="form-control no-kend" maxlength="3">
+                                    <input type="text" class="form-control no-kend" name="no_kendaraan_belakang"
+                                        maxlength="3">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-12">
                                     <hr>
-                                    <b>Pemilik</b> <br>
+                                    <b>Pemilik</b>
+                                </div>
+                                <div class="col-12">
                                     <label>Nama Pemilik</label>
-                                    <input type="text" class="form-control" name="" id="">
+                                    <input type="text" class="form-control" name="nama" id="">
                                 </div>
                             </div>
                             {{-- alamat pemilik --}}
@@ -122,8 +129,12 @@
                                 <div class="col-sm-12 col-md-6">
                                     <label>Jenis</label>
                                     <div class="input-group mb-3">
-                                        <select name="" id="" class="form-control">
-                                            <option value=""></option>
+                                        <select name="jenis" id="" class="form-control" required>
+                                            <option value="">-- Pilih Jenis --</option>
+                                            @foreach ($jenis as $jenis)
+                                                <option value="{{ $jenis->klasifikasis }}">{{ $jenis->klasifikasis }}
+                                                </option>
+                                            @endforeach
                                         </select>
                                         <div class="input-group-append">
                                             <button class="btn btn-info" data-toggle="tooltip" data-html="true"
@@ -134,7 +145,7 @@
                                 <div class="col-sm-12 col-md-6">
                                     <label>JBB</label>
                                     <div class="input-group mb-3">
-                                        <input type="number" class="form-control" name="" id="berat">
+                                        <input type="number" class="form-control" name="jbb" id="berat">
                                         <div class="input-group-append">
                                             <button class="btn btn-info" type="button" data-toggle="tooltip"
                                                 data-html="true" id="tooltipJBB">?</button>
@@ -173,16 +184,21 @@
                                     <hr>
                                     <b>Pemohon</b>
                                 </div>
-                                <div class="col-12">
+                                <div class="col-sm-12 col-md-6">
                                     <label>Nama Pemohon</label>
-                                    <input type="text" class="form-control" name="" id="">
+                                    <input type="text" class="form-control" name="namapemohon" id="">
+                                </div>
+                                <div class="col-sm-12 col-md-6">
+                                    <label>Nomor Telepon Pemohon</label>
+                                    <input type="text" class="form-control" name="nomor_telepon_pemohon"
+                                        id="">
                                 </div>
                             </div>
                             {{-- alamat pemohon --}}
                             @include('guest.registration.components.applicant-address')
                             <div class="row mt-3">
                                 <div class="col-12">
-                                    <button class="btn btn-block btn-info">
+                                    <button type="submit" class="btn btn-block btn-info">
                                         <i class="fa-regular fa-pen-to-square"></i> Daftar
                                     </button>
                                 </div>

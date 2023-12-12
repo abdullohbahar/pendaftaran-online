@@ -86,8 +86,8 @@
                         <li class="{{ $active == 'dashboard' ? 'active' : '' }}"><a class="nav-link"
                                 href="{{ route('admin.dashboard') }}"><i class="fas fa-home"></i>
                                 <span>Dashboard</span></a></li>
-                        <li class="{{ $active == 'pendaftaran' ? 'active' : '' }}"><a class="nav-link"><i
-                                    class="fas fa-users"></i>
+                        <li class="{{ $active == 'pendaftaran' ? 'active' : '' }}"><a
+                                href="{{ route('admin.pendaftaran') }}" class="nav-link"><i class="fas fa-users"></i>
                                 <span>Data Pendaftaran</span></a></li>
                         <li class="{{ $active == 'slider' ? 'active' : '' }}"><a href="{{ route('admin.slider') }}"
                                 class="nav-link"><i class="far fa-square"></i>

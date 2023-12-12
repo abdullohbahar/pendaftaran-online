@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\DashboardAdminController;
 use App\Http\Controllers\Admin\KritikSaranController;
 use App\Http\Controllers\Admin\KuotaController;
 use App\Http\Controllers\Admin\MerkController;
+use App\Http\Controllers\Admin\PendaftaranController;
 use App\Http\Controllers\Admin\RegulasiController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Auth\AuthController;
@@ -46,11 +47,16 @@ Route::get('cek-kuota', CekKuotaController::class)->name('cek.kuota');
 Route::get('cari-data-kendaraan/{nouji}', CariDatakendaraanController::class)->name('cari.data.kendaraan');
 Route::get('cek-tarif/{berat}', CekTarifController::class)->name('cari.tarif');
 
+// Pendaftaran
 Route::prefix('pendaftaran')->group(function () {
     Route::get('uji-pertama', [PendaftaranUjiPertamaController::class, 'index'])->name('uji.pertama');
+    Route::post('simpan-uji-pertama', [PendaftaranUjiPertamaController::class, 'store'])->name('simpan.uji.pertama');
+
     Route::get('uji-berkala', [PendaftaranUjiBerkalaController::class, 'index'])->name('uji.berkala');
     Route::get('numpang-uji-masuk', [PendaftaranNumpangUjiMasukController::class, 'index'])->name('numpang.uji.masuk');
     Route::get('mutasi-masuk', [PendaftaranMutasiMasuk::class, 'index'])->name('mutasi.masuk');
+
+    Route::get('bukti-pendaftaran-uji-pertama/{id}', [PendaftaranUjiPertamaController::class, 'buktiPendaftaran'])->name('bukti.uji.pertama');
 });
 
 Route::prefix('admin')->group(function () {
@@ -88,6 +94,10 @@ Route::prefix('admin')->group(function () {
         Route::get('/ubah/{id}', [MerkController::class, 'edit'])->name('admin.ubah.merek');
         Route::put('/update/{id}', [MerkController::class, 'update'])->name('admin.update.merek');
         Route::delete('/hapus/{id}', [MerkController::class, 'destroy'])->name('admin.hapus.merek');
+    });
+
+    Route::prefix('pendaftaran')->group(function () {
+        Route::get('/', [PendaftaranController::class, 'index'])->name('admin.pendaftaran');
     });
 
     Route::prefix('kritik-saran')->group(function () {

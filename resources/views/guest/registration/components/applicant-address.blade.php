@@ -25,4 +25,10 @@
                                         id="kelurahanPemohon">
                                     </select>
                                 </div>
+
+                                <input type="hidden" name="provinsi_pemohon" id="hiddenProvPemohon">
+                                <input type="hidden" name="kabupaten_pemohon" id="hiddenKabPemohon">
+                                <input type="hidden" name="kecamatan_pemohon" id="hiddenKecPemohon">
+                                <input type="hidden" name="kelurahan_pemohon" id="hiddenKelPemohon">
+
                             </div>
