@@ -2,18 +2,20 @@
 
 namespace App\Http\Controllers\Guest;
 
-use App\Http\Controllers\CekTarifController;
-use App\Http\Controllers\Controller;
+use PDF;
+use Exception;
+use App\Models\Kuota;
+use App\Models\Transaksi;
+use App\Models\Klasifikasi;
+use App\Models\Pendaftaran;
+use Illuminate\Http\Request;
 use App\Models\DataKendaraans;
 use App\Models\IdentitasKendaraan;
-use App\Models\Klasifikasi;
-use App\Models\Kuota;
-use App\Models\Pendaftaran;
-use App\Models\Transaksi;
-use Exception;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use App\Http\Controllers\Controller;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
+use App\Http\Controllers\CekTarifController;
 
 class PendaftaranUjiPertamaController extends Controller
 {
@@ -127,13 +129,13 @@ class PendaftaranUjiPertamaController extends Controller
                 'bill_paid' => 0,
             ];
 
-            Transaksi::create($dataTransaksi);
+            $saveTransaksi = Transaksi::create($dataTransaksi);
 
             // kurangi kuota
             Kuota::where('tanggal', $request->tglpendaftaran)->first()->decrement('tersedia');
 
             DB::commit();
-            return redirect()->back()->with('success', 'Berhasil Melakukan Pendaftaran');
+            return to_route('bukti.pendaftaran.uji.pertama', $saveTransaksi->id)->with('success', 'Berhasil Melakukan Pendaftaran');
         } catch (Exception $e) {
             Log::critical($e);
 
@@ -151,6 +153,7 @@ class PendaftaranUjiPertamaController extends Controller
             ->join('kodepenerbitan', 'pendaftarans.kodepenerbitans_id', '=', 'statuspenerbitan')
             ->select(
                 'transaksis.bill_code',
+                'transaksis.id as id_transaksi',
                 'pendaftarans.namapemohon as nama_pemohon',
                 'pendaftarans.alamatpemohon as alamat_pemohon',
                 'pendaftarans.notelp as notelp_pemohon',
@@ -191,9 +194,18 @@ class PendaftaranUjiPertamaController extends Controller
     {
         $transaksi = $this->queryTransaction($idTransaksi);
 
+        $qrCode = QrCode::size(80)->generate($transaksi->bill_code);
+        $qrCodeBase64 = 'data:image/png;base64,' . base64_encode($qrCode);
+
         $data = [
-            'transaksi' => $transaksi
+            'transaksi' => $transaksi,
+            'qrCode' => $qrCodeBase64
         ];
+
+        $pdf = PDF::loadView('guest.registration.bukti-pendaftaran.pdf.bukti', $data);
+        $pdf->setPaper('a4', 'potrait');
+
+        return $pdf->download('adf.pdf');
 
         return view('guest.registration.bukti-pendaftaran.pdf.bukti', $data);
     }

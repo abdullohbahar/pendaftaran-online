@@ -56,8 +56,8 @@ Route::prefix('pendaftaran')->group(function () {
     Route::get('numpang-uji-masuk', [PendaftaranNumpangUjiMasukController::class, 'index'])->name('numpang.uji.masuk');
     Route::get('mutasi-masuk', [PendaftaranMutasiMasuk::class, 'index'])->name('mutasi.masuk');
 
-    Route::get('bukti-pendaftaran-uji-pertama/{id}', [PendaftaranUjiPertamaController::class, 'buktiPendaftaran'])->name('bukti.uji.pertama');
-    Route::get('bukti-pdf-pendaftaran-uji-pertama/{id}', [PendaftaranUjiPertamaController::class, 'buktiPDF'])->name('bukti.pdf.uji.pertama');
+    Route::get('bukti-pendaftaran-uji-pertama/{id}', [PendaftaranUjiPertamaController::class, 'buktiPendaftaran'])->name('bukti.pendaftaran.uji.pertama');
+    Route::get('bukti-pdf-pendaftaran-uji-pertama/{id}', [PendaftaranUjiPertamaController::class, 'buktiPDF'])->name('bukti.pendaftaran.pdf.uji.pertama');
 });
 
 Route::prefix('admin')->group(function () {

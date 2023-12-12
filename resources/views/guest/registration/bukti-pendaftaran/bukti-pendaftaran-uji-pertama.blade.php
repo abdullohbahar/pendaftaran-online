@@ -87,7 +87,8 @@
                                 </div>
                             </div>
                             <div class="col-12">
-                                <button class="btn btn-primary mb-3">Unduh Bukti Pendaftaran</button>
+                                <a href="{{ route('bukti.pendaftaran.pdf.uji.pertama', $transaksi->id_transaksi) }}"
+                                    class="btn btn-primary mb-3">Unduh Bukti Pendaftaran</a>
                             </div>
                             <div class="col-sm-12 col-md-12 col-lg-12">
                                 <table class="table table-bordered">
@@ -95,67 +96,67 @@
                                         <tr>
                                             <th style="width: 30%">Nama Pemohon</th>
                                             <td style="width: 10px">:</td>
-                                            <td>{{ $transaksi->nama_pemohon }}</td>
+                                            <td>{{ $transaksi->nama_pemohon ?? '-' }}</td>
                                         </tr>
                                         <tr>
                                             <th style="width: 30%">Alamat Pemohon</th>
                                             <td style="width: 10px">:</td>
-                                            <td>{{ $transaksi->alamat_pemohon }}</td>
+                                            <td>{{ $transaksi->alamat_pemohon ?? '-' }}</td>
                                         </tr>
                                         <tr>
                                             <th>Nomor Uji Kendaraan</th>
                                             <td>:</td>
-                                            <td>{{ $transaksi->nouji ?? '-' }}</td>
+                                            <td>{{ $transaksi->nouji ?? ('-' ?? '-') }}</td>
                                         </tr>
                                         <tr>
                                             <th>Nomor Kendaraan</th>
                                             <td>:</td>
-                                            <td>{{ $transaksi->nomor_kendaraan }}</td>
+                                            <td>{{ $transaksi->nomor_kendaraan ?? '-' }}</td>
                                         </tr>
                                         <tr>
                                             <th>Nama Pemilik</th>
                                             <td>:</td>
-                                            <td>{{ $transaksi->nama_pemilik }}</td>
+                                            <td>{{ $transaksi->nama_pemilik ?? '-' }}</td>
                                         </tr>
                                         <tr>
                                             <th>Alamat Pemilik</th>
                                             <td>:</td>
-                                            <td>{{ $transaksi->alamat_pemilik }}</td>
+                                            <td>{{ $transaksi->alamat_pemilik ?? '-' }}</td>
                                         </tr>
                                         <tr>
                                             <th>Merek / Type</th>
                                             <td>:</td>
-                                            <td>{{ $transaksi->merek }}/{{ $transaksi->tipe }}</td>
+                                            <td>{{ $transaksi->merek ?? '-' }}/{{ $transaksi->tipe ?? '-' }}</td>
                                         </tr>
                                         <tr>
                                             <th>Tahun Pembuatan</th>
                                             <td>:</td>
-                                            <td>{{ $transaksi->tahun_pembuatan }}</td>
+                                            <td>{{ $transaksi->tahun_pembuatan ?? '-' }}</td>
                                         </tr>
                                         <tr>
                                             <th>Nomor Rangka</th>
                                             <td>:</td>
-                                            <td>{{ $transaksi->nomor_rangka }}</td>
+                                            <td>{{ $transaksi->nomor_rangka ?? '-' }}</td>
                                         </tr>
                                         <tr>
                                             <th>Nomor Mesin</th>
                                             <td>:</td>
-                                            <td>{{ $transaksi->nomor_mesin }}</td>
+                                            <td>{{ $transaksi->nomor_mesin ?? '-' }}</td>
                                         </tr>
                                         <tr>
                                             <th>Jenis rumah-rumah</th>
                                             <td>:</td>
-                                            <td>{{ $transaksi->jenis_rumah_rumah }}</td>
+                                            <td>{{ $transaksi->jenis_rumah_rumah ?? '-' }}</td>
                                         </tr>
                                         <tr>
                                             <th>Sifat Penggunaan</th>
                                             <td>:</td>
-                                            <td>{{ $transaksi->sifat_penggunaan }}</td>
+                                            <td>{{ $transaksi->sifat_penggunaan ?? '-' }}</td>
                                         </tr>
                                         <tr>
                                             <th>Sifat Pengujian</th>
                                             <td>:</td>
-                                            <td>{{ $transaksi->sifat_pengujian }}</td>
+                                            <td>{{ $transaksi->sifat_pengujian ?? '-' }}</td>
                                         </tr>
                                         <tr>
                                             <th>Tanggal Berakhir Masa Uji</th>

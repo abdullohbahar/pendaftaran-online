@@ -9,7 +9,7 @@
 
     <style>
         body {
-            font-size: 12.5pt;
+            font-size: 10pt;
         }
 
         @page {
@@ -45,15 +45,11 @@
 
 <body>
     <div class="header">
-        <table style="width: 55%; align-self: flex-start;">
+        <table style="width: 100%;">
             <tr>
-                <td>Perihal</td>
-                <td>:</td>
-                <td><b>Permohonan Pengujian Kendaraan Bermotor</b></td>
-            </tr>
-        </table>
-        <table style="width: 45%">
-            <tr>
+                <td style="vertical-align: top;">Perihal</td>
+                <td style="vertical-align: top;">:</td>
+                <td style="vertical-align: top;"><b>Permohonan Pengujian Kendaraan Bermotor</b></td>
                 <td>Kepada <br>
                     Yth. Kepala Dinas Perhubungan <br>
                     Kabupaten Sragen <br>
@@ -65,7 +61,7 @@
     <div class="body">
         <div class="body-section-1">
             <p>Yang bertanda tangan dibawah ini saya :</p>
-            <table>
+            <table style="margin-top: -10px;">
                 <tr>
                     <td style="width: 120px;">Nama</td>
                     <td>: {{ $transaksi->nama_pemohon ?? '-' }}</td>
@@ -88,10 +84,10 @@
                 </tr>
             </table>
         </div>
-        <div class="body-section-2">
+        <div class="body-section-2" style="margin-top: -10px;">
             <p>Dengan ini mengajukan permohonan pengujian kendaraan bermotor atas kendaraan :</p>
             <ol>
-                <table>
+                <table style="margin-top: -10px;">
                     <tr>
                         <td style="width: 220px;">
                             <li>Nomor Uji Kendaraan</li>
@@ -180,9 +176,9 @@
             </ol>
 
         </div>
-        <div class="body-section-3">
-            <p>Sehubungan hal tersebut diatas, bersama ini kami lampirkan :</p>
-            <ol>
+        <div class="body-section-3" style="margin-top: -10px;">
+            <p style="margin-top: -3px;">Sehubungan hal tersebut diatas, bersama ini kami lampirkan :</p>
+            <ol style="margin-top: -10px;">
                 <li>Kartu Uji Kendaraan Bermotor</li>
                 <li>Foto Copy KTP dan STNK, khusus bagi pengujian berkala pertama (kendaraan baru)/kendaraan mutasi
                     dan rubah bentuk (dengan menunjukan yang asli)</li>
@@ -213,22 +209,26 @@
             <p>Demikian keterangan ini dibuat agar dapat dipegunakan sebagaimana mestinya</p>
         </div>
     </div>
-    <div class="footer">
-        <div>
-            {!! QrCode::size(80)->generate($transaksi->bill_code) !!} <br>
-            {{ $transaksi->bill_code }}
-        </div>
-        <div style="text-align: center">
-            Sragen, {{ $tglUji }} <br>
-            Pemohon
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            {{ $transaksi->nama_pemohon }}
-        </div>
+    <div class="footer" style="margin-top: 10px;">
+        <table style="width: 100%">
+            <tr>
+                <td style="vertical-align: top;">
+                    <img src="{{ $qrCode }}" alt=""> <br>
+                    {{ $transaksi->bill_code }}
+                </td>
+                <td style="text-align: center; margin-left: 50px;">
+                    Sragen, {{ $tglUji }} <br>
+                    Pemohon
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    {{ $transaksi->nama_pemohon }}
+                </td>
+            </tr>
+        </table>
     </div>
 
     <script>
