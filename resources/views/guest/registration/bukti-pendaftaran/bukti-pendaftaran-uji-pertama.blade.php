@@ -103,6 +103,11 @@
                                             <td>{{ $transaksi->alamat_pemohon }}</td>
                                         </tr>
                                         <tr>
+                                            <th>Nomor Uji Kendaraan</th>
+                                            <td>:</td>
+                                            <td>{{ $transaksi->nouji ?? '-' }}</td>
+                                        </tr>
+                                        <tr>
                                             <th>Nomor Kendaraan</th>
                                             <td>:</td>
                                             <td>{{ $transaksi->nomor_kendaraan }}</td>

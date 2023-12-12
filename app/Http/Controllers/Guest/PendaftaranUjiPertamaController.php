@@ -143,23 +143,27 @@ class PendaftaranUjiPertamaController extends Controller
         }
     }
 
-    public function buktiPendaftaran($idTransaksi)
+    public function queryTransaction($idTransaksi)
     {
         $transaksi = Transaksi::join('pendaftarans', 'transaksis.pendaftaran_id', '=', 'pendaftarans.id')
             ->join('identitaskendaraans', 'pendaftarans.identitaskendaraan_id', '=', 'identitaskendaraans.id')
             ->join('datakendaraans', 'identitaskendaraans.id', '=', 'datakendaraans.identitaskendaraan_id')
             ->join('kodepenerbitan', 'pendaftarans.kodepenerbitans_id', '=', 'statuspenerbitan')
             ->select(
+                'transaksis.bill_code',
                 'pendaftarans.namapemohon as nama_pemohon',
                 'pendaftarans.alamatpemohon as alamat_pemohon',
+                'pendaftarans.notelp as notelp_pemohon',
                 'identitaskendaraans.nama as nama_pemilik',
                 'identitaskendaraans.alamat as alamat_pemilik',
                 'identitaskendaraans.noregistrasikendaraan as nomor_kendaraan',
                 'identitaskendaraans.merek',
                 'identitaskendaraans.tipe',
+                'identitaskendaraans.nouji',
                 'identitaskendaraans.thpembuatan as tahun_pembuatan',
                 'identitaskendaraans.norangka as nomor_rangka',
                 'identitaskendaraans.nomesin as nomor_mesin',
+                'identitaskendaraans.noidentitaspemilik',
                 'datakendaraans.bahan as jenis_rumah_rumah',
                 'identitaskendaraans.peruntukan as sifat_penggunaan',
                 'kodepenerbitan.keterangan as sifat_pengujian',
@@ -169,10 +173,28 @@ class PendaftaranUjiPertamaController extends Controller
             ->where('transaksis.id', $idTransaksi)
             ->first();
 
+        return $transaksi;
+    }
+
+    public function buktiPendaftaran($idTransaksi)
+    {
+        $transaksi = $this->queryTransaction($idTransaksi);
+
         $data = [
             'transaksi' => $transaksi
         ];
 
         return view('guest.registration.bukti-pendaftaran.bukti-pendaftaran-uji-pertama', $data);
+    }
+
+    public function buktiPDF($idTransaksi)
+    {
+        $transaksi = $this->queryTransaction($idTransaksi);
+
+        $data = [
+            'transaksi' => $transaksi
+        ];
+
+        return view('guest.registration.bukti-pendaftaran.pdf.bukti', $data);
     }
 }
