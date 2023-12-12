@@ -88,7 +88,7 @@
                             </div>
                             {{-- jika data tidak ditemukan tampilkan alert berikut --}}
                             <div class="alert alert-danger" role="alert" hidden>
-                                Data Tidak Ditemukan. harap mengisi data
+                                Data Tidak Ditemukan. harap mengisi data dibawah
                             </div>
                             <div class="row">
                                 <div class="col-sm-12 col-md-6">
@@ -169,18 +169,24 @@
                                     </div>
                                     <div class="col-sm-12 col-md-6">
                                         <label>Jenis</label>
-                                        <select name="jenis" id="jenis" class="form-control" required>
-                                            <option value="">-- Pilih Jenis --</option>
-                                            @foreach ($jenis as $jenis)
-                                                <option value="{{ $jenis->klasifikasis }}">{{ $jenis->klasifikasis }}
-                                                </option>
-                                            @endforeach
-                                        </select>
+                                        <div class="input-group mb-3">
+                                            <select name="jenis" id="jenis" class="form-control" required>
+                                                <option value="">-- Pilih Jenis --</option>
+                                                @foreach ($jenis as $jenis)
+                                                    <option value="{{ $jenis->klasifikasis }}">{{ $jenis->klasifikasis }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                            <div class="input-group-append">
+                                                <button class="btn btn-info" data-toggle="tooltip" data-html="true"
+                                                    type="button" id="tooltipJenis">?</button>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="col-sm-12 col-md-6">
                                         <label>JBB</label>
                                         <div class="input-group mb-3">
-                                            <input type="number" class="form-control" name="" id="berat">
+                                            <input type="number" class="form-control" name="jbb" id="berat">
                                             <div class="input-group-append">
                                                 <button class="btn btn-info" type="button" data-toggle="tooltip"
                                                     data-html="true" id="tooltipJBB">?</button>

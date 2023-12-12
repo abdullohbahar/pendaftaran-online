@@ -41,7 +41,7 @@ class PendaftaranUjiPertamaController extends Controller
 
             $dataIdentitasKendaraan = [
                 'nouji' => NULL, // Belum tau diambil dari mana,
-                'nama' => $request->nama,
+                'nama' => $request->nama_pemilik,
                 'alamat' => $alamatPemilik,
                 'nohp' => NULL, // tidak diisi
                 'noidentitaspemilik' => NULL,

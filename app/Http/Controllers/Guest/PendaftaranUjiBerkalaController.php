@@ -45,31 +45,12 @@ class PendaftaranUjiBerkalaController extends Controller
             $identitasKendaraan = IdentitasKendaraan::where('nouji', $request->nouji)->first();
 
             $dataIdentitasKendaraan = [
-                'nouji' => NULL, // Belum tau diambil dari mana,
-                'nama' => $request->nama,
+                'nama' => $request->nama_pemilik,
                 'alamat' => $alamatPemilik,
-                'nohp' => NULL, // tidak diisi
-                'noidentitaspemilik' => NULL,
                 'noregistrasikendaraan' => $noRegiastrasiKendaraan,
                 'merek' => $request->merek, // tidak diisi,
-                'nosertifikatreg' => NULL, // tidak diisi
-                'tglsertifikatreg' => NULL, // tidak diisi
-                'rancang' => NULL, // tidak diisi
                 'tipe' => $request->tipe, // tidak diisi
-                'norangka' => NULL, // tidak diisi
-                'nomesin' => NULL, // tidak diisi
-                'thpembuatan' => NULL, // tidak diisi
-                'bahanbakar' => NULL, // tidak diisi
-                'isisilinder' => NULL, // tidak diisi
-                'dayamotorpenggerak' => NULL, // tidak diisi
                 'jenis' => $request->jenis,
-                'model' => NULL, // tidak diisi
-                'peruntukan' => NULL, // tidak diisi
-                'warna' => NULL, // tidak diisi
-                'idkepaladinas' => NULL, // tidak diisi
-                'iddirektur' => NULL, // tidak diisi
-                'kodewilayah' => NULL, // tidak diisi
-                'kodewilayahasal' => NULL, // tidak diisi
             ];
 
             if ($identitasKendaraan) {

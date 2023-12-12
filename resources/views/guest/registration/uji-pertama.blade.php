@@ -117,7 +117,7 @@
                                 </div>
                                 <div class="col-12">
                                     <label>Nama Pemilik</label>
-                                    <input type="text" class="form-control" name="nama" id="">
+                                    <input type="text" class="form-control" name="nama_pemilik" id="">
                                 </div>
                             </div>
                             {{-- alamat pemilik --}}

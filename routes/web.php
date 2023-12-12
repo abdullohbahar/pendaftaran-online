@@ -56,6 +56,8 @@ Route::prefix('pendaftaran')->group(function () {
     Route::post('simpan-uji-berkala', [PendaftaranUjiBerkalaController::class, 'store'])->name('simpan.uji.berkala');
 
     Route::get('numpang-uji-masuk', [PendaftaranNumpangUjiMasukController::class, 'index'])->name('numpang.uji.masuk');
+    Route::post('simpan-numpang-uji-masuk', [PendaftaranNumpangUjiMasukController::class, 'store'])->name('simpan.numpang.uji.masuk');
+
     Route::get('mutasi-masuk', [PendaftaranMutasiMasuk::class, 'index'])->name('mutasi.masuk');
 
     Route::get('bukti-pendaftaran/{id}', [PendaftaranUjiPertamaController::class, 'buktiPendaftaran'])->name('bukti.pendaftaran');

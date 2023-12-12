@@ -80,20 +80,22 @@
             <div class="col-sm-12 col-md-12">
                 <div class="card">
                     <div class="card-body">
-                        <form action="">
+                        <form action="{{ route('simpan.numpang.uji.masuk') }}" method="POST">
+                            @csrf
                             {{-- jika data ditemukan tampilkan alert berikut --}}
                             <div class="alert alert-success text-capitalize" role="alert" hidden>
-                                Data Ditemukan. harap melengkapi data dibawah
+                                Data Ditemukan. cek kelengkapan data dibawah
                             </div>
                             {{-- jika data tidak ditemukan tampilkan alert berikut --}}
-                            <div class="alert alert-danger" role="alert" hidden>
-                                Data Tidak Ditemukan
+                            <div class="alert alert-danger text-capitalize" role="alert" hidden>
+                                Data Tidak Ditemukan. harap mengisi data dibawah
                             </div>
                             <div class="row">
                                 <div class="col-sm-12 col-md-6">
                                     <label>Tanggal booking</label>
                                     <div class="input-group mb-3">
-                                        <input type="text" class="form-control" id="tanggalBooking">
+                                        <input type="text" name="tglpendaftaran" class="form-control"
+                                            id="tanggalBooking">
                                         <div class="input-group-append">
                                             <button class="btn btn-success" id="cekKuota" type="button">Cek
                                                 Kuota</button>
@@ -103,7 +105,7 @@
                                 <div class="col-sm-12 col-md-6">
                                     <label>Nomor Uji</label>
                                     <div class="input-group mb-3">
-                                        <input type="text" class="form-control" id="nouji">
+                                        <input type="text" class="form-control" id="nouji" name="nouji">
                                         <div class="input-group-append">
                                             <button class="btn btn-success" id="search" type="button">Cari Data
                                                 Kendaraan</button>
@@ -115,19 +117,22 @@
                                 </div>
                             </div>
                             {{-- jika data ditemukan maka tampilkan form berikut --}}
-                            <div id="showResult" hidden>
+                            <div id="showResult">
                                 <div class="row">
                                     <div class="col-sm-12 col-md-4">
                                         <label>No Kendaraan (Awal)</label>
-                                        <input type="text" class="form-control no-kend" maxlength="2">
+                                        <input type="text" class="form-control no-kend" id="noKendAwal"
+                                            name="no_kendaraan_awal" maxlength="2">
                                     </div>
                                     <div class="col-sm-12 col-md-4">
                                         <label>No Kendaraan (Tengah)</label>
-                                        <input type="text" class="form-control no-kend" maxlength="4">
+                                        <input type="text" class="form-control no-kend" id="noKendTengah"
+                                            name="no_kendaraan_tengah" maxlength="4">
                                     </div>
                                     <div class="col-sm-12 col-md-4">
                                         <label>No Kendaraan (Belakang)</label>
-                                        <input type="text" class="form-control no-kend" maxlength="3">
+                                        <input type="text" class="form-control no-kend" id="noKendBelakang"
+                                            name="no_kendaraan_belakang" maxlength="3">
                                     </div>
                                 </div>
                                 <div class="row">
@@ -135,7 +140,7 @@
                                         <hr>
                                         <b>Pemilik</b> <br>
                                         <label>Nama Pemilik</label>
-                                        <input type="text" class="form-control" name="" id="">
+                                        <input type="text" class="form-control" name="nama_pemilik" id="namaPemilik">
                                     </div>
                                 </div>
                                 {{-- alamat pemilik --}}
@@ -147,14 +152,24 @@
                                     <div class="col-sm-12 col-md-4">
                                         <label>Daerah Asal</label>
                                         <div class="input-group mb-3">
-                                            <input type="text" class="form-control" name="" id="">
+                                            <select name="daerah" id="daerah" class="select2" required>
+                                                <option value="">-- Pilih Daerah Asal --</option>
+                                                @foreach ($daerah as $daerah)
+                                                    <option value="{{ $daerah->kodewilayah }}">{{ $daerah->namawilayah }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-sm-12 col-md-4">
                                         <label>Jenis</label>
                                         <div class="input-group mb-3">
-                                            <select name="" id="" class="form-control">
-                                                <option value=""></option>
+                                            <select name="jenis" id="jenis" class="form-control" required>
+                                                <option value="">-- Pilih Jenis --</option>
+                                                @foreach ($jenis as $jenis)
+                                                    <option value="{{ $jenis->klasifikasis }}">{{ $jenis->klasifikasis }}
+                                                    </option>
+                                                @endforeach
                                             </select>
                                             <div class="input-group-append">
                                                 <button class="btn btn-info" data-toggle="tooltip" data-html="true"
@@ -165,7 +180,7 @@
                                     <div class="col-sm-12 col-md-4">
                                         <label>JBB</label>
                                         <div class="input-group mb-3">
-                                            <input type="number" class="form-control" name="" id="berat">
+                                            <input type="number" class="form-control" name="jbb" id="berat">
                                             <div class="input-group-append">
                                                 <button class="btn btn-info" type="button" data-toggle="tooltip"
                                                     data-html="true" id="tooltipJBB">?</button>
@@ -216,9 +231,14 @@
                                         <hr>
                                         <b>Pemohon</b>
                                     </div>
-                                    <div class="col-12">
+                                    <div class="col-sm-12 col-md-6">
                                         <label>Nama Pemohon</label>
-                                        <input type="text" class="form-control" name="" id="">
+                                        <input type="text" class="form-control" name="namapemohon" id="">
+                                    </div>
+                                    <div class="col-sm-12 col-md-6">
+                                        <label>Nomor Telepon Pemohon</label>
+                                        <input type="text" class="form-control" name="nomor_telepon_pemohon"
+                                            id="">
                                     </div>
                                 </div>
                                 {{-- alamat pemohon --}}
