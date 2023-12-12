@@ -135,11 +135,9 @@ class PendaftaranUjiPertamaController extends Controller
             Kuota::where('tanggal', $request->tglpendaftaran)->first()->decrement('tersedia');
 
             DB::commit();
-            return to_route('bukti.pendaftaran.uji.pertama', $saveTransaksi->id)->with('success', 'Berhasil Melakukan Pendaftaran');
+            return to_route('bukti.pendaftaran', $saveTransaksi->id)->with('success', 'Berhasil Melakukan Pendaftaran');
         } catch (Exception $e) {
             Log::critical($e);
-
-            dd($e);
 
             return redirect()->back()->with('failed', 'Gagal Melakukan Pendaftaran')->withInput();
         }
@@ -187,7 +185,7 @@ class PendaftaranUjiPertamaController extends Controller
             'transaksi' => $transaksi
         ];
 
-        return view('guest.registration.bukti-pendaftaran.bukti-pendaftaran-uji-pertama', $data);
+        return view('guest.registration.bukti-pendaftaran.bukti-pendaftaran', $data);
     }
 
     public function buktiPDF($idTransaksi)

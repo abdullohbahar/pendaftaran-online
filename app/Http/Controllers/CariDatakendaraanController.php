@@ -17,6 +17,7 @@ class CariDatakendaraanController extends Controller
     {
         $identitasKendaraan = IdentitasKendaraan::join('pendaftarans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')
             ->join('kodepenerbitan', 'pendaftarans.kodepenerbitans_id', '=', 'kodepenerbitan.statuspenerbitan')
+            ->join('datakendaraans', 'pendaftarans.identitaskendaraan_id', '=', 'datakendaraans.identitaskendaraan_id')
             ->select(
                 'identitaskendaraans.nouji',
                 'identitaskendaraans.noregistrasikendaraan',
@@ -27,7 +28,9 @@ class CariDatakendaraanController extends Controller
                 'identitaskendaraans.merek',
                 'identitaskendaraans.tipe',
                 'identitaskendaraans.model',
-                'kodepenerbitan.keterangan as status_uji_terakhir'
+                'identitaskendaraans.alamat as alamat_pemilik',
+                'kodepenerbitan.keterangan as status_uji_terakhir',
+                'datakendaraans.jbb'
             )
             ->where('identitaskendaraans.nouji', $nouji)
             ->orWhere('identitaskendaraans.noregistrasikendaraan', $nouji)

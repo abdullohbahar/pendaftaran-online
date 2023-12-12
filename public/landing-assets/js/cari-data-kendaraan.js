@@ -6,7 +6,6 @@ $("body").on("click", "#search", function () {
     if (nouji == "") {
         $(".alert-success").attr("hidden", true);
         $(".alert-danger").attr("hidden", false);
-        $("#showResult").attr("hidden", true);
     }
 
     $.ajax({
@@ -18,7 +17,6 @@ $("body").on("click", "#search", function () {
             if (response.status == 200) {
                 $(".alert-success").attr("hidden", false);
                 $(".alert-danger").attr("hidden", true);
-                $("#showResult").attr("hidden", false);
 
                 if (pathname == "/cek-kendaraan") {
                     $("#nomorUji").text(response.data.nouji);
@@ -37,11 +35,57 @@ $("body").on("click", "#search", function () {
                     $("#statusUjiTerakhir").text(
                         response.data.status_uji_terakhir
                     );
+                } else {
+                    var noregistrasikendaraan =
+                        response.data.noregistrasikendaraan.split(" ");
+
+                    var alamatPemilik = response.data.alamat_pemilik.split(",");
+
+                    var alamatPemilik = alamatPemilik.map(function (elemen) {
+                        return elemen.trimStart();
+                    });
+
+                    console.log(alamatPemilik);
+
+                    $("#noKendAwal").val(noregistrasikendaraan[0]);
+                    $("#noKendTengah").val(noregistrasikendaraan[1]);
+                    $("#noKendBelakang").val(noregistrasikendaraan[2]);
+                    $("#namaPemilik").val(response.data.nama);
+
+                    // Menggunakan fungsi setSelect2Value
+                    setSelect2Value(
+                        "select2-provinsiPemilik",
+                        "provinsiPemilik",
+                        alamatPemilik[3],
+                        1000
+                    );
+                    setSelect2Value(
+                        "select2-kabupatenPemilik",
+                        "kabupatenPemilik",
+                        alamatPemilik[2],
+                        1500
+                    );
+                    setSelect2Value(
+                        "select2-kecamatanPemilik",
+                        "kecamatanPemilik",
+                        alamatPemilik[1],
+                        2000
+                    );
+                    setSelect2Value(
+                        "select2-kelurahanPemilik",
+                        "kelurahanPemilik",
+                        alamatPemilik[0],
+                        2500
+                    );
+
+                    $("#merek").val(response.data.merek).trigger("change");
+                    $("#tipe").val(response.data.tipe);
+                    $("#jenis").val(response.data.jenis);
+                    $("#berat").val(response.data.jbb);
                 }
             } else {
                 $(".alert-success").attr("hidden", true);
                 $(".alert-danger").attr("hidden", false);
-                $("#showResult").attr("hidden", true);
             }
         },
         error: function (xhr, status, error) {
@@ -49,3 +93,24 @@ $("body").on("click", "#search", function () {
         },
     });
 });
+
+// Fungsi untuk mengubah dan memilih opsi pada Select2
+function setSelect2Value(containerId, selectId, optionText, delay) {
+    setTimeout(() => {
+        // Memeriksa apakah elemen sudah ada
+        if ($(`#${containerId}-container`).length) {
+            var optionToSelect = $(
+                `#${selectId} option:contains('${optionText}')`
+            );
+
+            $(`#${selectId}`).val(optionToSelect.val()).trigger("change");
+
+            // Mengubah isi (teks) dari elemen <span>
+            $(`#${containerId}-container`)
+                .text(optionText)
+                .attr("title", optionText);
+
+            $(`#${selectId}`).trigger("change");
+        }
+    }, delay);
+}

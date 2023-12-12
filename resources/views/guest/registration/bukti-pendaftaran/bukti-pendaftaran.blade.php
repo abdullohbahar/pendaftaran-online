@@ -66,11 +66,11 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/">Beranda</a></li>
                 <li class="breadcrumb-item"><a href="{{ route('registration') }}">Pendaftaran</a></li>
-                <li class="breadcrumb-item">Bukti Pendaftaran Uji Pertama</li>
+                <li class="breadcrumb-item">Bukti Pendaftaran</li>
             </ol>
         </nav>
 
-        <h2>Bukti Pendaftaran Uji Pertama</h2>
+        <h2>Bukti Pendaftaran</h2>
 
         <hr>
     </div>
@@ -87,7 +87,7 @@
                                 </div>
                             </div>
                             <div class="col-12">
-                                <a href="{{ route('bukti.pendaftaran.pdf.uji.pertama', $transaksi->id_transaksi) }}"
+                                <a href="{{ route('bukti.pendaftaran.pdf', $transaksi->id_transaksi) }}"
                                     class="btn btn-primary mb-3">Unduh Bukti Pendaftaran</a>
                             </div>
                             <div class="col-sm-12 col-md-12 col-lg-12">

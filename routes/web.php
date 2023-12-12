@@ -53,11 +53,13 @@ Route::prefix('pendaftaran')->group(function () {
     Route::post('simpan-uji-pertama', [PendaftaranUjiPertamaController::class, 'store'])->name('simpan.uji.pertama');
 
     Route::get('uji-berkala', [PendaftaranUjiBerkalaController::class, 'index'])->name('uji.berkala');
+    Route::post('simpan-uji-berkala', [PendaftaranUjiBerkalaController::class, 'store'])->name('simpan.uji.berkala');
+
     Route::get('numpang-uji-masuk', [PendaftaranNumpangUjiMasukController::class, 'index'])->name('numpang.uji.masuk');
     Route::get('mutasi-masuk', [PendaftaranMutasiMasuk::class, 'index'])->name('mutasi.masuk');
 
-    Route::get('bukti-pendaftaran-uji-pertama/{id}', [PendaftaranUjiPertamaController::class, 'buktiPendaftaran'])->name('bukti.pendaftaran.uji.pertama');
-    Route::get('bukti-pdf-pendaftaran-uji-pertama/{id}', [PendaftaranUjiPertamaController::class, 'buktiPDF'])->name('bukti.pendaftaran.pdf.uji.pertama');
+    Route::get('bukti-pendaftaran/{id}', [PendaftaranUjiPertamaController::class, 'buktiPendaftaran'])->name('bukti.pendaftaran');
+    Route::get('bukti-pdf-pendaftaran/{id}', [PendaftaranUjiPertamaController::class, 'buktiPDF'])->name('bukti.pendaftaran.pdf');
 });
 
 Route::prefix('admin')->group(function () {
