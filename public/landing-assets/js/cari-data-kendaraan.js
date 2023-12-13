@@ -88,6 +88,9 @@ $("body").on("click", "#search", function () {
                     $("#daerahTujuan")
                         .val(response.data.kodewilayah)
                         .trigger("change");
+                    $("#daerahAsal")
+                        .val(response.data.kodewilayahasal)
+                        .trigger("change");
                 }
             } else {
                 $(".alert-success").attr("hidden", true);

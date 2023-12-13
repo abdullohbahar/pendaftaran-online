@@ -51,8 +51,7 @@ class PendaftaranMutasiMasuk extends Controller
                 'merek' => $request->merek, // tidak diisi,
                 'tipe' => $request->tipe, // tidak diisi
                 'jenis' => $request->jenis,
-                'kodewilayah' => $request->daerah_tujuan,
-                'kodewilayahasal' => $request->daerah_tujuan,
+                'kodewilayahasal' => $request->daerahAsal,
             ];
 
             if ($identitasKendaraan) {

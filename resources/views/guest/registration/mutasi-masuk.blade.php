@@ -151,8 +151,8 @@
                                         <hr>
                                     </div>
                                     <div class="col-sm-12 col-md-4">
-                                        <label>Daerah Tujuan</label>
-                                        <select name="daerah_tujuan" id="daerahTujuan" style="width: 100%" class="select2"
+                                        <label>Daerah Asal</label>
+                                        <select name="daerah_asal" id="daerahAsal" style="width: 100%" class="select2"
                                             required>
                                             <option value="">-- Pilih Daerah Asal --</option>
                                             @foreach ($daerah as $daerah)

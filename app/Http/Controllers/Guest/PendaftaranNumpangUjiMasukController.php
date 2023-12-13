@@ -52,7 +52,6 @@ class PendaftaranNumpangUjiMasukController extends Controller
                 'tipe' => $request->tipe, // tidak diisi
                 'jenis' => $request->jenis,
                 'kodewilayah' => $request->daerah,
-                'kodewilayahasal' => $request->daerah,
             ];
 
             if ($identitasKendaraan) {
