@@ -32,10 +32,10 @@
                                                 <tr>
                                                     <th>No</th>
                                                     <th>Tanggal Pendaftaran</th>
+                                                    <th>Jenis Pendaftaran</th>
                                                     <th>Nama Pemohon</th>
-                                                    <th>Nama Pemilik</th>
                                                     <th>No Kendaraan</th>
-                                                    <th>Aksi</th>
+                                                    {{-- <th>Aksi</th> --}}
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -89,21 +89,21 @@
                     name: "tglpendaftaran",
                 },
                 {
-                    data: "namapemohon",
-                    name: "namapemohon",
+                    data: "keterangan",
+                    name: "keterangan",
                 },
                 {
-                    data: "nama_pemilik",
-                    name: "nama_pemilik",
+                    data: "namapemohon",
+                    name: "namapemohon",
                 },
                 {
                     data: "noregistrasikendaraan",
                     name: "noregistrasikendaraan",
                 },
-                {
-                    data: "action",
-                    name: "action",
-                },
+                // {
+                //     data: "action",
+                //     name: "action",
+                // },
             ],
         });
 

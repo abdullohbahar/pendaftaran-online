@@ -21,16 +21,17 @@ class PendaftaranController extends Controller
                     'pendaftarans.tglpendaftaran',
                     'pendaftarans.namapemohon',
                     'identitaskendaraans.nama as nama_pemilik',
-                    'identitaskendaraans.noregistrasikendaraan'
+                    'identitaskendaraans.noregistrasikendaraan',
+                    'kodepenerbitan.keterangan',
                 )
                 ->orderBy('pendaftarans.tglpendaftaran', 'desc')->get();
 
             return Datatables::of($query)
-                ->addColumn('action', function ($item) {
-                    return '<div class="btn-group" role="group" aria-label="Basic example">
-                            </div>';
-                })
-                ->rawColumns(['action'])
+                // ->addColumn('action', function ($item) {
+                //     return '<div class="btn-group" role="group" aria-label="Basic example">
+                //             </div>';
+                // })
+                // ->rawColumns(['action'])
                 ->make();
         }
 
