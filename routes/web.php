@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\CariDatakendaraanController;
 use App\Http\Controllers\CekKuotaController;
+use App\Http\Controllers\CekPendaftaranController as ControllersCekPendaftaranController;
 use App\Http\Controllers\CekTarifController;
 use App\Http\Controllers\CekTipeController;
 use App\Http\Controllers\Guest\CekKendaraanController;
@@ -50,6 +51,7 @@ Route::get('cek-kuota', CekKuotaController::class)->name('cek.kuota');
 Route::get('cari-data-kendaraan/{nouji}', CariDatakendaraanController::class)->name('cari.data.kendaraan');
 Route::get('cek-tarif/{berat}', CekTarifController::class)->name('cari.tarif');
 Route::get('cek-tipe/{merk}', CekTipeController::class)->name('cek.tipe');
+Route::get('request-cek-pendaftaran/{nomor}', ControllersCekPendaftaranController::class)->name('request.cek.pendaftaran');
 
 // Pendaftaran
 Route::prefix('pendaftaran')->group(function () {

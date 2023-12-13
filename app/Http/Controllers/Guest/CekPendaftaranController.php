@@ -2,13 +2,40 @@
 
 namespace App\Http\Controllers\Guest;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\IdentitasKendaraan;
+use App\Http\Controllers\Controller;
 
 class CekPendaftaranController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return view('guest.cek-pendaftaran');
+
+        if ($request->nouji) {
+            $identitasKendaraan = IdentitasKendaraan::join('pendaftarans', 'identitaskendaraans.id', '=', 'pendaftarans.identitaskendaraan_id')
+                ->join('kodepenerbitan', 'pendaftarans.kodepenerbitans_id', '=', 'kodepenerbitan.statuspenerbitan')
+                ->join('datakendaraans', 'pendaftarans.identitaskendaraan_id', '=', 'datakendaraans.identitaskendaraan_id')
+                ->join('transaksis', 'pendaftarans.id', '=', 'transaksis.pendaftaran_id')
+                ->select(
+                    'pendaftarans.tglpendaftaran',
+                    'pendaftarans.namapemohon',
+                    'identitaskendaraans.nama as nama_pemilik',
+                    'identitaskendaraans.noregistrasikendaraan',
+                    'kodepenerbitan.keterangan',
+                    'transaksis.id as id_transaksi',
+                )
+                ->where('identitaskendaraans.nouji', $request->nouji)
+                ->orWhere('identitaskendaraans.noregistrasikendaraan', $request->nouji)
+                ->orderBy('pendaftarans.tglpendaftaran', 'desc')
+                ->get();
+        } else {
+            $identitasKendaraan = [];
+        }
+
+        $data = [
+            'identitasKendaraan' => $identitasKendaraan,
+        ];
+
+        return view('guest.cek-pendaftaran', $data);
     }
 }
