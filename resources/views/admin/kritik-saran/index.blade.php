@@ -24,14 +24,6 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="card">
-                            <div class="card-header">
-                                <div class="row justify-content-end">
-                                    <div class="col-12 text-end">
-                                        <a href="{{ route('admin.tambah.merek') }}" class="btn btn-success">Tambah
-                                            Merek</a>
-                                    </div>
-                                </div>
-                            </div>
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-12">

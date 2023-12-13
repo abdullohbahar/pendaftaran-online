@@ -42,8 +42,10 @@ Route::post('/simpan-kritik-dan-saran', [KritikDanSaranController::class, 'store
 Route::get('/cek-kendaraan', [CekKendaraanController::class, 'index'])->name('cek.kendaraan');
 Route::get('/cek-pendaftaran', [CekPendaftaranController::class, 'index'])->name('cek.pendaftaran');
 
-Route::get('/admin/login', [AuthController::class, 'index'])->name('login');
-Route::post('/auth', [AuthController::class, 'authenticate'])->name('auth');
+Route::get('/login', [AuthController::class, 'index'])->name('login')->middleware('guest');
+Route::post('/auth', [AuthController::class, 'authenticate'])->name('auth')->middleware('guest');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
+
 Route::get('cek-kuota', CekKuotaController::class)->name('cek.kuota');
 Route::get('cari-data-kendaraan/{nouji}', CariDatakendaraanController::class)->name('cari.data.kendaraan');
 Route::get('cek-tarif/{berat}', CekTarifController::class)->name('cari.tarif');
@@ -67,7 +69,7 @@ Route::prefix('pendaftaran')->group(function () {
     Route::get('bukti-pdf-pendaftaran/{id}', [PendaftaranUjiPertamaController::class, 'buktiPDF'])->name('bukti.pendaftaran.pdf');
 });
 
-Route::prefix('admin')->group(function () {
+Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('dashboard', [DashboardAdminController::class, 'index'])->name('admin.dashboard');
 
     Route::prefix('slider')->group(function () {
