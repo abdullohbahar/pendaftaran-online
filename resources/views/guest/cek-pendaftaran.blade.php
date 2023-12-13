@@ -112,7 +112,13 @@
                                                     <td>{{ \Carbon\Carbon::parse($item->tglpendaftaran)->format('d-m-Y') }}
                                                     </td>
                                                     <td>{{ $item->noregistrasikendaraan }}</td>
-                                                    <td>-</td>
+                                                    <td>
+                                                        @if ($item->bill_paid)
+                                                            <button class="btn btn-info btn-sm">Lunas</button>
+                                                        @else
+                                                            <button class="btn btn-danger btn-sm">Belum Lunas</button>
+                                                        @endif
+                                                    </td>
                                                     <td>
                                                         <a href="{{ route('bukti.pendaftaran.pdf', $item->id_transaksi) }}"
                                                             class="btn btn-success">

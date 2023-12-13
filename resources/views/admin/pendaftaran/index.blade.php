@@ -35,6 +35,7 @@
                                                     <th>Jenis Pendaftaran</th>
                                                     <th>Nama Pemohon</th>
                                                     <th>No Kendaraan</th>
+                                                    <th>Status</th>
                                                     {{-- <th>Aksi</th> --}}
                                                 </tr>
                                             </thead>
@@ -99,6 +100,10 @@
                 {
                     data: "noregistrasikendaraan",
                     name: "noregistrasikendaraan",
+                },
+                {
+                    data: "status",
+                    name: "status",
                 },
                 // {
                 //     data: "action",

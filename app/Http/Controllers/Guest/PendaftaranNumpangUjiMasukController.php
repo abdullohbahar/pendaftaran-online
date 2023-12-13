@@ -131,8 +131,6 @@ class PendaftaranNumpangUjiMasukController extends Controller
         } catch (Exception $e) {
             Log::critical($e);
 
-            dd($e);
-
             return redirect()->back()->with('failed', 'Gagal Melakukan Pendaftaran')->withInput();
         }
     }
