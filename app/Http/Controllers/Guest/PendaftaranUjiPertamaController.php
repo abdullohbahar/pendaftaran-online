@@ -200,10 +200,12 @@ class PendaftaranUjiPertamaController extends Controller
             'qrCode' => $qrCodeBase64
         ];
 
+        $fileName = "BUKTI PENDAFTARAN - $transaksi->nomor_kendaraan - $transaksi->tanggal_berakhir_masa_uji";
+
         $pdf = PDF::loadView('guest.registration.bukti-pendaftaran.pdf.bukti', $data);
         $pdf->setPaper('a4', 'potrait');
 
-        return $pdf->download('adf.pdf');
+        return $pdf->download($fileName . '.pdf');
 
         return view('guest.registration.bukti-pendaftaran.pdf.bukti', $data);
     }
