@@ -17,12 +17,14 @@ class PendaftaranController extends Controller
         if (request()->ajax()) {
             $query = Pendaftaran::join('identitaskendaraans', 'pendaftarans.identitaskendaraan_id', '=', 'identitaskendaraans.id')
                 ->join('kodepenerbitan', 'pendaftarans.kodepenerbitans_id', '=', 'kodepenerbitan.statuspenerbitan')
+                ->join('transaksis', 'pendaftarans.id', '=', 'transaksis.pendaftaran_id')
                 ->select(
                     'pendaftarans.tglpendaftaran',
                     'pendaftarans.namapemohon',
                     'identitaskendaraans.nama as nama_pemilik',
                     'identitaskendaraans.noregistrasikendaraan',
                     'kodepenerbitan.keterangan',
+                    'transaksis.bill_paid'
                 )
                 ->orderBy('pendaftarans.tglpendaftaran', 'desc')->get();
 
@@ -31,7 +33,16 @@ class PendaftaranController extends Controller
                 //     return '<div class="btn-group" role="group" aria-label="Basic example">
                 //             </div>';
                 // })
-                // ->rawColumns(['action'])
+                ->addColumn('status', function ($item) {
+                    if ($item->bill_paid) {
+                        $html = '<button class="btn btn-info btn-sm">Lunas</button>';
+                    } else {
+                        $html = '<button class="btn btn-danger btn-sm">Belum Lunas</button>';
+                    }
+
+                    return $html;
+                })
+                ->rawColumns(['status'])
                 ->make();
         }
 
