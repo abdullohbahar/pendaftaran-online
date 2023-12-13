@@ -1,11 +1,19 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardAdminController;
+use App\Http\Controllers\Admin\KritikSaranController;
 use App\Http\Controllers\Admin\KuotaController;
 use App\Http\Controllers\Admin\MerkController;
+use App\Http\Controllers\Admin\PendaftaranController;
+use App\Http\Controllers\Admin\PorfileController;
 use App\Http\Controllers\Admin\RegulasiController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\CariDatakendaraanController;
+use App\Http\Controllers\CekKuotaController;
+use App\Http\Controllers\CekPendaftaranController as ControllersCekPendaftaranController;
+use App\Http\Controllers\CekTarifController;
+use App\Http\Controllers\CekTipeController;
 use App\Http\Controllers\Guest\CekKendaraanController;
 use App\Http\Controllers\Guest\CekPendaftaranController;
 use App\Http\Controllers\Guest\KritikDanSaranController;
@@ -32,20 +40,39 @@ Route::get('/', [LandingController::class, 'index'])->name('home');
 Route::get('/regulasi', [LandingController::class, 'regulation'])->name('regulation');
 Route::get('/pendaftaran', [RegistrationController::class, 'index'])->name('registration');
 Route::get('/kritik-dan-saran', [KritikDanSaranController::class, 'index'])->name('kritik');
+Route::post('/simpan-kritik-dan-saran', [KritikDanSaranController::class, 'store'])->name('simpan.kritik');
 Route::get('/cek-kendaraan', [CekKendaraanController::class, 'index'])->name('cek.kendaraan');
 Route::get('/cek-pendaftaran', [CekPendaftaranController::class, 'index'])->name('cek.pendaftaran');
 
-Route::get('/admin/login', [AuthController::class, 'index'])->name('login');
-Route::post('/auth', [AuthController::class, 'authenticate'])->name('auth');
+Route::get('/login', [AuthController::class, 'index'])->name('login')->middleware('guest');
+Route::post('/auth', [AuthController::class, 'authenticate'])->name('auth')->middleware('guest');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
 
+Route::get('cek-kuota', CekKuotaController::class)->name('cek.kuota');
+Route::get('cari-data-kendaraan/{nouji}', CariDatakendaraanController::class)->name('cari.data.kendaraan');
+Route::get('cek-tarif/{berat}', CekTarifController::class)->name('cari.tarif');
+Route::get('cek-tipe/{merk}', CekTipeController::class)->name('cek.tipe');
+Route::get('request-cek-pendaftaran/{nomor}', ControllersCekPendaftaranController::class)->name('request.cek.pendaftaran');
+
+// Pendaftaran
 Route::prefix('pendaftaran')->group(function () {
     Route::get('uji-pertama', [PendaftaranUjiPertamaController::class, 'index'])->name('uji.pertama');
+    Route::post('simpan-uji-pertama', [PendaftaranUjiPertamaController::class, 'store'])->name('simpan.uji.pertama');
+
     Route::get('uji-berkala', [PendaftaranUjiBerkalaController::class, 'index'])->name('uji.berkala');
+    Route::post('simpan-uji-berkala', [PendaftaranUjiBerkalaController::class, 'store'])->name('simpan.uji.berkala');
+
     Route::get('numpang-uji-masuk', [PendaftaranNumpangUjiMasukController::class, 'index'])->name('numpang.uji.masuk');
+    Route::post('simpan-numpang-uji-masuk', [PendaftaranNumpangUjiMasukController::class, 'store'])->name('simpan.numpang.uji.masuk');
+
     Route::get('mutasi-masuk', [PendaftaranMutasiMasuk::class, 'index'])->name('mutasi.masuk');
+    Route::post('simpan-mutasi-masuk', [PendaftaranMutasiMasuk::class, 'store'])->name('simpan.mutasi.masuk');
+
+    Route::get('bukti-pendaftaran/{id}', [PendaftaranUjiPertamaController::class, 'buktiPendaftaran'])->name('bukti.pendaftaran');
+    Route::get('bukti-pdf-pendaftaran/{id}', [PendaftaranUjiPertamaController::class, 'buktiPDF'])->name('bukti.pendaftaran.pdf');
 });
 
-Route::prefix('admin')->group(function () {
+Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('dashboard', [DashboardAdminController::class, 'index'])->name('admin.dashboard');
 
     Route::prefix('slider')->group(function () {
@@ -80,5 +107,18 @@ Route::prefix('admin')->group(function () {
         Route::get('/ubah/{id}', [MerkController::class, 'edit'])->name('admin.ubah.merek');
         Route::put('/update/{id}', [MerkController::class, 'update'])->name('admin.update.merek');
         Route::delete('/hapus/{id}', [MerkController::class, 'destroy'])->name('admin.hapus.merek');
+    });
+
+    Route::prefix('pendaftaran')->group(function () {
+        Route::get('/', [PendaftaranController::class, 'index'])->name('admin.pendaftaran');
+    });
+
+    Route::prefix('kritik-saran')->group(function () {
+        Route::get('/', [KritikSaranController::class, 'index'])->name('admin.kritik.saran');
+    });
+
+    Route::prefix('profile')->group(function () {
+        Route::get('/', [PorfileController::class, 'index'])->name('profile');
+        Route::put('/update-profile/{id}', [PorfileController::class, 'update'])->name('update.profile');
     });
 });

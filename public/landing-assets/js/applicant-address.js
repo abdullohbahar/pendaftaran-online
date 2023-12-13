@@ -51,7 +51,8 @@ $(selectProvPemohon).change(function () {
         console.log("on change selectProvPemohon");
 
         var text = $("#provinsiPemohon :selected").text();
-        console.log("value = " + value + " / " + "text = " + text);
+        console.log("values = " + value + " / " + "text = " + text);
+        $("#hiddenProvPemohon").val(text);
 
         console.log("Load Kabupaten di " + text + "...");
         $.getJSON(urlKabupaten + value + ".json", function (res) {
@@ -101,6 +102,7 @@ $(selectKabPemohon).change(function () {
 
         var text = $("#kabupatenPemohon :selected").text();
         console.log("value = " + value + " / " + "text = " + text);
+        $("#hiddenKabPemohon").val(text);
 
         console.log("Load Kecamatan di " + text + "...");
         $.getJSON(urlKecamatan + value + ".json", function (res) {
@@ -150,6 +152,7 @@ $(selectKecPemohon).change(function () {
 
         var text = $("#kecamatanPemohon :selected").text();
         console.log("value = " + value + " / " + "text = " + text);
+        $("#hiddenKecPemohon").val(text);
 
         console.log("Load Kelurahan di " + text + "...");
         $.getJSON(urlKelurahan + value + ".json", function (res) {
@@ -198,5 +201,6 @@ $(selectKelPemohon).change(function () {
 
         var text = $("#kelurahanPemohon :selected").text();
         console.log("value = " + value + " / " + "text = " + text);
+        $("#hiddenKelPemohon").val(text);
     }
 });

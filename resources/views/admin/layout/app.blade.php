@@ -64,10 +64,10 @@
                             </div>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a href="" class="dropdown-item has-icon">
+                            <a href="{{ route('profile') }}" class="dropdown-item has-icon">
                                 <i class="far fa-user"></i> Profile
                             </a>
-                            <a href="" class="dropdown-item has-icon text-danger">
+                            <a href="{{ route('logout') }}" class="dropdown-item has-icon text-danger">
                                 <i class="fas fa-sign-out-alt"></i> Logout
                             </a>
                         </div>
@@ -86,23 +86,26 @@
                         <li class="{{ $active == 'dashboard' ? 'active' : '' }}"><a class="nav-link"
                                 href="{{ route('admin.dashboard') }}"><i class="fas fa-home"></i>
                                 <span>Dashboard</span></a></li>
-                        <li class="{{ $active == 'pendaftaran' ? 'active' : '' }}"><a class="nav-link"><i
-                                    class="fas fa-users"></i>
+                        <li class="{{ $active == 'pendaftaran' ? 'active' : '' }}"><a
+                                href="{{ route('admin.pendaftaran') }}" class="nav-link"><i class="fas fa-users"></i>
                                 <span>Data Pendaftaran</span></a></li>
                         <li class="{{ $active == 'slider' ? 'active' : '' }}"><a href="{{ route('admin.slider') }}"
                                 class="nav-link"><i class="far fa-square"></i>
                                 <span>Slider</span></a></li>
-                        <li class="{{ $active == 'regulasi' ? 'active' : '' }}"><a href="{{ route('admin.regulasi') }}"
-                                class="nav-link"><i class="far fa-square"></i>
+                        <li class="{{ $active == 'regulasi' ? 'active' : '' }}"><a
+                                href="{{ route('admin.regulasi') }}" class="nav-link"><i class="far fa-square"></i>
                                 <span>Regulasi</span></a></li>
+                        <li class="{{ $active == 'kritik-saran' ? 'active' : '' }}"><a
+                                href="{{ route('admin.kritik.saran') }}" class="nav-link"><i class="far fa-square"></i>
+                                <span>Kritik & Saran</span></a></li>
                         <li class="nav-item dropdown {{ $active == 'kuota' || $active == 'merek' ? 'active' : '' }}">
                             <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i
                                     class="fas fa-boxes"></i> <span>Master Data</span></a>
                             <ul class="dropdown-menu">
                                 <li class="{{ $active == 'kuota' ? 'active' : '' }}"><a class="nav-link"
                                         href="{{ route('admin.kuota') }}">Data Kuota</a></li>
-                                <li class="{{ $active == 'merek' ? 'active' : '' }}"><a class="nav-link"
-                                        href="{{ route('admin.merek') }}">Data Merek</a></li>
+                                {{-- <li class="{{ $active == 'merek' ? 'active' : '' }}"><a class="nav-link"
+                                        href="{{ route('admin.merek') }}">Data Merek</a></li> --}}
                             </ul>
                         </li>
                     </ul>

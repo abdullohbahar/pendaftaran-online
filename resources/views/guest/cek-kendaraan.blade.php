@@ -65,18 +65,26 @@
                 <div class="card">
                     <div class="card-body">
                         <form action="" id="selectPendaftaran">
+                            {{-- jika data ditemukan tampilkan alert berikut --}}
+                            <div class="alert alert-success text-capitalize" role="alert" hidden>
+                                Data Ditemukan.
+                            </div>
+                            {{-- jika data tidak ditemukan tampilkan alert berikut --}}
+                            <div class="alert alert-danger" role="alert" hidden>
+                                Data Tidak Ditemukan
+                            </div>
                             <div class="row mt-3">
                                 <div class="col-sm-12 col-md-12 col-lg-4">
                                     <label class="mt-2" for=""><b>Nomor uji / Nomor Kendaraan</b></label>
                                 </div>
                                 <div class="col-sm-12 col-md-12 col-lg-8">
                                     <input type="text" name="" class="form-control"
-                                        placeholder="masukkan no uji / no kendaraan" id="">
+                                        placeholder="masukkan no uji / no kendaraan" id="nouji">
                                 </div>
                             </div>
                             <div class="row mt-3">
                                 <div class="col-12">
-                                    <button type="submit" class="btn btn-block btn-info">
+                                    <button type="button" class="btn btn-block btn-info" id="search">
                                         <i class="fa-regular fa-pen-to-square"></i> Cek Kendaraan
                                     </button>
                                 </div>
@@ -84,58 +92,57 @@
                         </form>
 
                         {{-- hasil dari cek kendaraan --}}
-                        <div class="row mt-5" id="showResult">
+                        <div class="row mt-5" id="showResultCekKendaraan" hidden>
                             <div class="col-12">
                                 <table class="table table-bordered">
                                     <tr>
                                         <th style="width: 30%">Nomor Uji</th>
                                         <td style="width: 10px;">:</td>
-                                        <td>asdf</td>
+                                        <td id="nomorUji"></td>
                                     </tr>
                                     <tr>
                                         <th>Nomor Kendaraan</th>
                                         <td>:</td>
-                                        <td>asdf</td>
+                                        <td id="nomorKendaraan"></td>
                                     </tr>
                                     <tr>
                                         <th>Nama Pemilik</th>
                                         <td>:</td>
-                                        <td>asdf</td>
+                                        <td id="namaPemilik"></td>
                                     </tr>
                                     <tr>
                                         <th>Nomor Rangka</th>
                                         <td>:</td>
-                                        <td>asdf</td>
+                                        <td id="nomorRangka"></td>
                                     </tr>
                                     <tr>
                                         <th>Nomor Mesin</th>
                                         <td>:</td>
-                                        <td>asdf</td>
+                                        <td id="nomorMesin"></td>
                                     </tr>
                                     <tr>
                                         <th>Jenis</th>
                                         <td>:</td>
-                                        <td>asdf</td>
+                                        <td id="jenis"></td>
                                     </tr>
                                     <tr>
-                                        <th>Merk / TIpe</th>
+                                        <th>Merk / Tipe</th>
                                         <td>:</td>
-                                        <td>asdf</td>
+                                        <td>
+                                            <span id="merek"></span>
+                                            /
+                                            <span id="tipe"></span>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <th>Model</th>
                                         <td>:</td>
-                                        <td>asdf</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Masa Berlaku Uji</th>
-                                        <td>:</td>
-                                        <td>asdf</td>
+                                        <td id="model"></td>
                                     </tr>
                                     <tr>
                                         <th>Status uji Terakhir</th>
                                         <td>:</td>
-                                        <td>asdf</td>
+                                        <td id="statusUjiTerakhir"></td>
                                     </tr>
                                 </table>
                             </div>
@@ -148,4 +155,5 @@
 @endsection
 
 @push('addons-js')
+    <script src="{{ asset('./landing-assets/js/cari-data-kendaraan.js') }}"></script>
 @endpush

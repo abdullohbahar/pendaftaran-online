@@ -259,12 +259,12 @@
                 <hr>
                 <div id="grafiktahun" class="" style="width: 100%; height:280px;"></div>
             </div>
-            <div class="col-12">
+            {{-- <div class="col-12">
                 <hr>
                 <h5 class="text-center"><b>GRAFIK PENDAFTARAN TANGGAL 2023-11-23 s/d 2023-11-29</b></h5>
                 <hr>
                 <div id="graph" class="" style="width: 100%; height:280px;"></div>
-            </div>
+            </div> --}}
         </div>
     </div>
 @endsection
@@ -324,9 +324,7 @@
                 },
                 series: [{
                     name: 'Pendaftaran',
-                    data: [16151, 15032, 16740, 9894, 15611, 14216, 16362, 15070, 15688, 13828,
-                        14766, 0
-                    ],
+                    data: {{ $dataPendaftarTahunan }},
                     color: "#2c5957",
 
                 }],
@@ -334,7 +332,7 @@
             });
         });
     </script>
-    <script>
+    {{-- <script>
         $(function() {
             $('#graph').highcharts({
 
@@ -384,5 +382,5 @@
                 credits: "disabled"
             });
         });
-    </script>
+    </script> --}}
 @endpush

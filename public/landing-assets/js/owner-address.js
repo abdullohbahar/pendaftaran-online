@@ -57,6 +57,7 @@ $(selectProv).change(function () {
 
         var text = $("#provinsiPemilik :selected").text();
         console.log("value = " + value + " / " + "text = " + text);
+        $("#hiddenProvPemilik").val(text);
 
         console.log("Load Kabupaten di " + text + "...");
         $.getJSON(urlKabupaten + value + ".json", function (res) {
@@ -106,6 +107,7 @@ $(selectKab).change(function () {
 
         var text = $("#kabupatenPemilik :selected").text();
         console.log("value = " + value + " / " + "text = " + text);
+        $("#hiddenKabPemilik").val(text);
 
         console.log("Load Kecamatan di " + text + "...");
         $.getJSON(urlKecamatan + value + ".json", function (res) {
@@ -155,6 +157,7 @@ $(selectKec).change(function () {
 
         var text = $("#kecamatanPemilik :selected").text();
         console.log("value = " + value + " / " + "text = " + text);
+        $("#hiddenKecPemilik").val(text);
 
         console.log("Load Kelurahan di " + text + "...");
         $.getJSON(urlKelurahan + value + ".json", function (res) {
@@ -203,5 +206,6 @@ $(selectKel).change(function () {
 
         var text = $("#kelurahanPemilik :selected").text();
         console.log("value = " + value + " / " + "text = " + text);
+        $("#hiddenKelPemilik").val(text);
     }
 });
