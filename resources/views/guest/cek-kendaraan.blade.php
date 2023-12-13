@@ -92,7 +92,7 @@
                         </form>
 
                         {{-- hasil dari cek kendaraan --}}
-                        <div class="row mt-5" id="showResult" hidden>
+                        <div class="row mt-5" id="showResultCekKendaraan" hidden>
                             <div class="col-12">
                                 <table class="table table-bordered">
                                     <tr>
@@ -128,17 +128,16 @@
                                     <tr>
                                         <th>Merk / Tipe</th>
                                         <td>:</td>
-                                        <td id="merek"></td>
+                                        <td>
+                                            <span id="merek"></span>
+                                            /
+                                            <span id="tipe"></span>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <th>Model</th>
                                         <td>:</td>
                                         <td id="model"></td>
-                                    </tr>
-                                    <tr>
-                                        <th>Masa Berlaku Uji</th>
-                                        <td>:</td>
-                                        <td id="masaBerlakuUji"></td>
                                     </tr>
                                     <tr>
                                         <th>Status uji Terakhir</th>

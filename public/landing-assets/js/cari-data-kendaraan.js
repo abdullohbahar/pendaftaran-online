@@ -19,21 +19,20 @@ $("body").on("click", "#search", function () {
                 $(".alert-danger").attr("hidden", true);
 
                 if (pathname == "/cek-kendaraan") {
-                    $("#nomorUji").text(response.data.nouji);
+                    $("#showResultCekKendaraan").attr("hidden", false);
+                    $("#nomorUji").text(response.data.nouji ?? "-");
                     $("#nomorKendaraan").text(
-                        response.data.noregistrasikendaraan
+                        response.data.noregistrasikendaraan ?? "-"
                     );
-                    $("#namaPemilik").text(response.data.nama);
-                    $("#nomorRangka").text(response.data.norangka);
-                    $("#nomorMesin").text(response.data.nomesin);
-                    $("#jenis").text(response.data.jenis);
-                    $("#merek").text(
-                        response.data.merek + " / " + response.data.tipe
-                    );
-                    $("#model").text(response.data.model);
-                    $("#masaBerlakuUji").text("-");
+                    $("#namaPemilik").text(response.data.nama ?? "-");
+                    $("#nomorRangka").text(response.data.norangka ?? "-");
+                    $("#nomorMesin").text(response.data.nomesin ?? "-");
+                    $("#jenis").text(response.data.jenis ?? "-");
+                    $("#merek").text(response.data.merek ?? "-");
+                    $("#tipe").text(response.data.tipe ?? "-");
+                    $("#model").text(response.data.model ?? "-");
                     $("#statusUjiTerakhir").text(
-                        response.data.status_uji_terakhir
+                        response.data.status_uji_terakhir ?? "-"
                     );
                 } else {
                     var noregistrasikendaraan =
