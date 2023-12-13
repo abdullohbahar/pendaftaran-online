@@ -64,7 +64,7 @@
                             </div>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a href="" class="dropdown-item has-icon">
+                            <a href="{{ route('profile') }}" class="dropdown-item has-icon">
                                 <i class="far fa-user"></i> Profile
                             </a>
                             <a href="{{ route('logout') }}" class="dropdown-item has-icon text-danger">
@@ -92,8 +92,8 @@
                         <li class="{{ $active == 'slider' ? 'active' : '' }}"><a href="{{ route('admin.slider') }}"
                                 class="nav-link"><i class="far fa-square"></i>
                                 <span>Slider</span></a></li>
-                        <li class="{{ $active == 'regulasi' ? 'active' : '' }}"><a href="{{ route('admin.regulasi') }}"
-                                class="nav-link"><i class="far fa-square"></i>
+                        <li class="{{ $active == 'regulasi' ? 'active' : '' }}"><a
+                                href="{{ route('admin.regulasi') }}" class="nav-link"><i class="far fa-square"></i>
                                 <span>Regulasi</span></a></li>
                         <li class="{{ $active == 'kritik-saran' ? 'active' : '' }}"><a
                                 href="{{ route('admin.kritik.saran') }}" class="nav-link"><i class="far fa-square"></i>

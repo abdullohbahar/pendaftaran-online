@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\KritikSaranController;
 use App\Http\Controllers\Admin\KuotaController;
 use App\Http\Controllers\Admin\MerkController;
 use App\Http\Controllers\Admin\PendaftaranController;
+use App\Http\Controllers\Admin\PorfileController;
 use App\Http\Controllers\Admin\RegulasiController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Auth\AuthController;
@@ -114,5 +115,10 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
     Route::prefix('kritik-saran')->group(function () {
         Route::get('/', [KritikSaranController::class, 'index'])->name('admin.kritik.saran');
+    });
+
+    Route::prefix('profile')->group(function () {
+        Route::get('/', [PorfileController::class, 'index'])->name('profile');
+        Route::put('/update-profile/{id}', [PorfileController::class, 'update'])->name('update.profile');
     });
 });

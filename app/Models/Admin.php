@@ -14,4 +14,6 @@ class Admin extends Authenticatable
         'username',
         'password'
     ];
+
+    public $timestamps = false;
 }
