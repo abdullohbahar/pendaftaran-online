@@ -8,8 +8,6 @@ function clearOptions(id) {
 }
 
 $.getJSON(urlProvinsi, function (res) {
-    console.log(res);
-
     res = $.map(res, function (obj) {
         obj.text = obj.nama;
         return obj;

@@ -95,7 +95,7 @@
                                     <label>Tanggal booking</label>
                                     <div class="input-group mb-3">
                                         <input type="text" class="form-control" readonly id="tanggalBooking"
-                                            name="tglpendaftaran">
+                                            name="tglpendaftaran" required>
                                         <div class="input-group-append">
                                             <button class="btn btn-success" id="cekKuota" type="button">Cek
                                                 Kuota</button>
@@ -155,7 +155,8 @@
                                             <select name="merek" id="merek" class="select2" required>
                                                 <option value="">-- Pilih merek --</option>
                                                 @foreach ($merek as $merek)
-                                                    <option value="{{ $merek->merek }}">{{ $merek->merek }}
+                                                    <option value="{{ $merek->merek }}" aria-label="{{ $merek->id }}">
+                                                        {{ $merek->merek }}
                                                     </option>
                                                 @endforeach
                                             </select>
@@ -164,7 +165,15 @@
                                     <div class="col-sm-12 col-md-6">
                                         <label>Tipe</label>
                                         <div class="input-group mb-3">
-                                            <input type="text" name="tipe" class="form-control" id="tipe">
+                                            <select name="tipe" id="tipe" class="select2" style="width: 100%"
+                                                required>
+                                                <option value="">-- Pilih tipe --</option>
+                                                @foreach ($tipe as $tipe)
+                                                    <option value="{{ $tipe->tipe }}" aria-label="{{ $tipe->id }}">
+                                                        {{ $tipe->tipe }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-sm-12 col-md-6">
@@ -264,6 +273,7 @@
     <script src="{{ asset('./landing-assets/js/cek-kuota.js') }}"></script>
     <script src="{{ asset('./landing-assets/js/cek-tarif.js') }}"></script>
     <script src="{{ asset('./landing-assets/js/cari-data-kendaraan.js') }}"></script>
+    {{-- <script src="{{ asset('./landing-assets/js/cari-merek-tipe.js') }}"></script> --}}
 
 
     <script src="{{ asset('./landing-assets/js/owner-address.js') }}"></script>

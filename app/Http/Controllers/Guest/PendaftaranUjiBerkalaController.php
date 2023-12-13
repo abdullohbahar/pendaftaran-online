@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Guest;
 
 use Exception;
 use App\Models\Merk;
+use App\Models\Tipe;
 use App\Models\Kuota;
 use App\Models\Transaksi;
 use App\Models\Klasifikasi;
@@ -22,10 +23,12 @@ class PendaftaranUjiBerkalaController extends Controller
     {
         $jenis = Klasifikasi::orderBy('klasifikasis', 'asc')->get();
         $merek = Merk::orderBy('merek', 'asc')->get();
+        $tipe = Tipe::orderBy('tipe', 'asc')->select('tipe')->get();
 
         $data = [
             'jenis' => $jenis,
             'merek' => $merek,
+            'tipe' => $tipe
         ];
 
         return view('guest.registration.uji-berkala', $data);
