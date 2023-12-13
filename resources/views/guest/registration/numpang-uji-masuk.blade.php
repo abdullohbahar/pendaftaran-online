@@ -150,10 +150,10 @@
                                         <hr>
                                     </div>
                                     <div class="col-sm-12 col-md-4">
-                                        <label>Daerah Tujuan</label>
+                                        <label>Daerah Asal</label>
                                         <div class="input-group mb-3">
                                             <select name="daerah" id="daerah" class="select2" required>
-                                                <option value="">-- Pilih Daerah Tujuan --</option>
+                                                <option value="">-- Pilih Daerah Asal --</option>
                                                 @foreach ($daerah as $daerah)
                                                     <option value="{{ $daerah->kodewilayah }}">{{ $daerah->namawilayah }}
                                                     </option>

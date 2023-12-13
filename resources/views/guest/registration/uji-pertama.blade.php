@@ -86,7 +86,7 @@
                                 <div class="col-sm-12 col-md-3">
                                     <label>Tanggal booking</label>
                                     <div class="input-group mb-3">
-                                        <input type="text" class="form-control" id="tanggalBooking"
+                                        <input type="text" class="form-control" readonly id="tanggalBooking"
                                             name="tglpendaftaran">
                                         <div class="input-group-append">
                                             <button class="btn btn-success" id="cekKuota" type="button">Cek
