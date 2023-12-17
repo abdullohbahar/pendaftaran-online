@@ -147,13 +147,13 @@
         <div style="background-color: #001C38; color: white;">
             <div class="container justify-content-between d-flex justify-content-between">
                 <div class="py-2">
-                    <a class="text-reset" href="/">Beranda</a> |
+                    {{-- <a class="text-reset" href="/">Beranda</a> |
                     <a class="text-reset" href="{{ route('regulation') }}">Regulasi</a> |
                     <a class="text-reset" href="{{ route('registration') }}">Pendaftaran</a> |
-                    <a class="text-reset" href="{{ route('kritik') }}">Kritik dan Saran</a>
+                    <a class="text-reset" href="{{ route('kritik') }}">Kritik dan Saran</a> --}}
                 </div>
                 <div class="py-2">
-                    <span>Copyright &copy; {{ date('Y') }} Clouds PKB versi 3.0.</span>
+                    <span text-end>Copyright &copy; {{ date('Y') }} CV. SOLUSI TEKNIK INDONESIA</span>
                 </div>
             </div>
         </div>

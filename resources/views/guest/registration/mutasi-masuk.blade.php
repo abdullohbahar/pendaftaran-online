@@ -122,18 +122,18 @@
                                 <div class="row">
                                     <div class="col-sm-12 col-md-4">
                                         <label>No Kendaraan (Awal)</label>
-                                        <input type="text" class="form-control no-kend" name="no_kendaraan_awal"
+                                        <input type="text" class="form-control no-kend" name="no_kendaraan_awal" required
                                             id="noKendAwal" maxlength="2">
                                     </div>
                                     <div class="col-sm-12 col-md-4">
                                         <label>No Kendaraan (Tengah)</label>
                                         <input type="text" class="form-control no-kend" name="no_kendaraan_tengah"
-                                            id="noKendTengah" maxlength="4">
+                                            required id="noKendTengah" maxlength="4">
                                     </div>
                                     <div class="col-sm-12 col-md-4">
                                         <label>No Kendaraan (Belakang)</label>
                                         <input type="text" class="form-control no-kend" name="no_kendaraan_belakang"
-                                            id="noKendBelakang" maxlength="3">
+                                            required id="noKendBelakang" maxlength="3">
                                     </div>
                                 </div>
                                 <div class="row">
@@ -141,7 +141,8 @@
                                         <hr>
                                         <b>Pemilik</b> <br>
                                         <label>Nama Pemilik</label>
-                                        <input type="text" class="form-control" name="nama_pemilik" id="namaPemilik">
+                                        <input type="text" class="form-control" name="nama_pemilik" id="namaPemilik"
+                                            required>
                                     </div>
                                 </div>
                                 {{-- alamat pemilik --}}
@@ -180,7 +181,8 @@
                                     <div class="col-sm-12 col-md-4">
                                         <label>JBB</label>
                                         <div class="input-group mb-3">
-                                            <input type="number" class="form-control" name="jbb" id="berat">
+                                            <input type="number" class="form-control" name="jbb" id="berat"
+                                                required>
                                             <div class="input-group-append">
                                                 <button class="btn btn-info" type="button" data-toggle="tooltip"
                                                     data-html="true" id="tooltipJBB">?</button>
@@ -233,11 +235,12 @@
                                     </div>
                                     <div class="col-sm-12 col-md-6">
                                         <label>Nama Pemohon</label>
-                                        <input type="text" class="form-control" name="namapemohon" id="">
+                                        <input type="text" class="form-control" name="namapemohon" id=""
+                                            required>
                                     </div>
                                     <div class="col-sm-12 col-md-6">
                                         <label>Nomor Telepon Pemohon</label>
-                                        <input type="text" class="form-control" name="nomor_telepon_pemohon"
+                                        <input type="text" class="form-control" name="nomor_telepon_pemohon" required
                                             id="">
                                     </div>
                                 </div>

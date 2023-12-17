@@ -95,7 +95,7 @@
                                     <label>Tanggal booking</label>
                                     <div class="input-group mb-3">
                                         <input type="text" name="tglpendaftaran" class="form-control" id="tanggalBooking"
-                                            readonly>
+                                            required readonly>
                                         <div class="input-group-append">
                                             <button class="btn btn-success" id="cekKuota" type="button">Cek
                                                 Kuota</button>
@@ -122,17 +122,17 @@
                                     <div class="col-sm-12 col-md-4">
                                         <label>No Kendaraan (Awal)</label>
                                         <input type="text" class="form-control no-kend" id="noKendAwal"
-                                            name="no_kendaraan_awal" maxlength="2">
+                                            name="no_kendaraan_awal" maxlength="2" required>
                                     </div>
                                     <div class="col-sm-12 col-md-4">
                                         <label>No Kendaraan (Tengah)</label>
                                         <input type="text" class="form-control no-kend" id="noKendTengah"
-                                            name="no_kendaraan_tengah" maxlength="4">
+                                            name="no_kendaraan_tengah" maxlength="4" required>
                                     </div>
                                     <div class="col-sm-12 col-md-4">
                                         <label>No Kendaraan (Belakang)</label>
                                         <input type="text" class="form-control no-kend" id="noKendBelakang"
-                                            name="no_kendaraan_belakang" maxlength="3">
+                                            name="no_kendaraan_belakang" maxlength="3" required>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -140,7 +140,8 @@
                                         <hr>
                                         <b>Pemilik</b> <br>
                                         <label>Nama Pemilik</label>
-                                        <input type="text" class="form-control" name="nama_pemilik" id="namaPemilik">
+                                        <input type="text" class="form-control" name="nama_pemilik" id="namaPemilik"
+                                            required>
                                     </div>
                                 </div>
                                 {{-- alamat pemilik --}}
@@ -180,7 +181,8 @@
                                     <div class="col-sm-12 col-md-4">
                                         <label>JBB</label>
                                         <div class="input-group mb-3">
-                                            <input type="number" class="form-control" name="jbb" id="berat">
+                                            <input type="number" class="form-control" name="jbb" id="berat"
+                                                required>
                                             <div class="input-group-append">
                                                 <button class="btn btn-info" type="button" data-toggle="tooltip"
                                                     data-html="true" id="tooltipJBB">?</button>
@@ -233,11 +235,12 @@
                                     </div>
                                     <div class="col-sm-12 col-md-6">
                                         <label>Nama Pemohon</label>
-                                        <input type="text" class="form-control" name="namapemohon" id="">
+                                        <input type="text" class="form-control" name="namapemohon" id=""
+                                            required>
                                     </div>
                                     <div class="col-sm-12 col-md-6">
                                         <label>Nomor Telepon Pemohon</label>
-                                        <input type="text" class="form-control" name="nomor_telepon_pemohon"
+                                        <input type="text" class="form-control" name="nomor_telepon_pemohon" required
                                             id="">
                                     </div>
                                 </div>
