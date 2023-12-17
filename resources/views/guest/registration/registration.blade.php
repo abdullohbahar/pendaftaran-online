@@ -42,6 +42,20 @@
         .callout-primary h4 {
             color: #20a8d8;
         }
+
+        .custom-rounded {
+            border-radius: 20px;
+        }
+
+        .card-permohonan {
+            width: 100%;
+        }
+
+        .center-div {
+            display: grid;
+            place-items: center;
+            /* Optional: Set the height to 100% of the viewport height for vertical centering */
+        }
     </style>
 @endpush
 
@@ -57,23 +71,58 @@
         <h2>Pendaftaran</h2>
 
         <hr>
-
-        <div class="callout callout-primary alert-dismissible fade show">
-            <h4><i class="fas fa-fw fa-info-circle"></i> Tata Cara Pendaftaran</h4>
-            <i class="fa fa-building fa-fw"></i> Pilih provinsi <i class="fa fa-arrow-right"></i> Pilih pengujian kendaraan
-            tujuan <i class="fa fa-arrow-right"></i> Pilih permohonan
-            <br>
-            <i class="fa fa-building fa-fw"></i> Jika Permohonan Baru, isi dan lengkapi data-data kendaraan
-            <br>
-            <i class="fa fa-building fa-fw"></i> Untuk Perpanjangan, Mutasi Masuk, Peremajaan hingga Buku Uji Hilang
-            silahkan masukkan Nomor Uji kendaraan.
-            <br>
-        </div>
     </div>
 
     <div class="container" style="height: 480px;">
         <div class="row justify-content-center">
-            <div class="col-sm-12 col-md-7">
+            <div class="col-sm-12 col-md-6 col-lg-9">
+                <div class="row">
+                    <div class="col-12">
+                        <h5><b>Pilih Permohonan</b></h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-6">
+                        <a href="{{ route('uji.pertama') }}"
+                            class="card custom-rounded card-permohonan text-decoration-none"
+                            style="background-color:#C5FFF8">
+                            <div class="card-body text-center center-div">
+                                <h4><b>Uji Pertama</b></h4>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-6">
+                        <a href="{{ route('uji.berkala') }}"
+                            class="card custom-rounded card-permohonan text-decoration-none"
+                            style="background-color:#C5FFF8">
+                            <div class="card-body text-center center-div">
+                                <h4><b>Uji Berkala</b></h4>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-sm-12 col-md-12 col-lg-6">
+                        <a href="{{ route('numpang.uji.masuk') }}"
+                            class="card custom-rounded card-permohonan text-decoration-none"
+                            style="background-color:#C5FFF8">
+                            <div class="card-body text-center center-div">
+                                <h4><b>Numpang Uji Masuk</b></h4>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-6">
+                        <a href="{{ route('mutasi.masuk') }}"
+                            class="card custom-rounded card-permohonan text-decoration-none"
+                            style="background-color:#C5FFF8">
+                            <div class="card-body text-center center-div">
+                                <h4><b>Mutasi Masuk</b></h4>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {{-- <div class="col-sm-12 col-md-7 mt-5">
                 <div class="card">
                     <div class="card-body">
                         <form action="" id="selectPendaftaran">
@@ -102,7 +151,7 @@
                         </form>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 @endsection

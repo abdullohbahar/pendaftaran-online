@@ -19,6 +19,23 @@
             height: 200px;
             object-fit: contain;
         }
+
+        .btn-blue {
+            background-color: #00197b;
+            color: white;
+            height: 3rem;
+        }
+
+        .btn-blue:hover {
+            color: #F08742;
+        }
+
+        .center-div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
     </style>
 @endpush
 
@@ -45,23 +62,29 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-12 mt-3 text-center" style="color: #03A678">
+            <div class="col-12 mt-3 text-center" style="color: #00197b">
                 <h3>DAFTAR UJI KENDARAAN BERMOTOR ONLINE</h3>
                 <h6>"Mari daftar uji berkala kendaraan secara online"</h6>
                 <div class="row mt-3">
                     <div class="col-sm-12 col-md-4">
-                        <a href="{{ route('cek.kendaraan') }}" class="btn btn-success btn-block mt-2">
-                            <i class="fa-solid fa-magnifying-glass"></i> Cek Kendaraan
+                        <a href="{{ route('cek.kendaraan') }}" class="btn btn-blue btn-block rounded-pill mt-2">
+                            <div class="center-div">
+                                <i class="fa-solid fa-magnifying-glass mr-2"></i> Cek Kendaraan
+                            </div>
                         </a>
                     </div>
                     <div class="col-sm-12 col-md-4">
-                        <a href="{{ route('registration') }}" class="btn btn-success btn-block mt-2">
-                            <i class="fa-regular fa-pen-to-square"></i> Pendaftaran
+                        <a href="{{ route('registration') }}" class="btn btn-blue btn-block rounded-pill mt-2">
+                            <div class="center-div">
+                                <i class="fa-regular fa-pen-to-square mr-2"></i> Pendaftaran
+                            </div>
                         </a>
                     </div>
                     <div class="col-sm-12 col-md-4">
-                        <a href="{{ route('cek.pendaftaran') }}" class="btn btn-success btn-block mt-2">
-                            <i class="fa-solid fa-magnifying-glass"></i> Cek Pendaftaran
+                        <a href="{{ route('cek.pendaftaran') }}" class="btn btn-blue btn-block rounded-pill mt-2">
+                            <div class="center-div">
+                                <i class="fa-solid fa-magnifying-glass mr-2"></i> Cek Pendaftaran
+                            </div>
                         </a>
                     </div>
                 </div>
