@@ -89,7 +89,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 mt-3 text-center">
+            <div class="col-12 mt-3 text-center" style="color: #273175;">
                 <hr>
                 <h5><b>UPTD TERDAFTAR</b></h5>
                 <hr>
@@ -272,7 +272,7 @@
             </div>
             <div class="col-12">
                 <hr>
-                <h5 class="text-center"><b>SOP NGEKIRONLINE</b></h5>
+                <h5 class="text-center" style="color: #273175;"><b>SOP NGEKIRONLINE</b></h5>
                 <hr>
                 <img src="{{ asset('./landing-assets/img/sop.png') }}" class="w-100" alt="" srcset="">
             </div>

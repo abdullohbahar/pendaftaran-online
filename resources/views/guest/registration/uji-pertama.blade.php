@@ -70,7 +70,7 @@
             </ol>
         </nav>
 
-        <h2>Uji Pertama</h2>
+        <h2><b>Uji Pertama</b></h2>
 
         <hr>
     </div>
@@ -182,7 +182,13 @@
                             <div class="row">
                                 <div class="col-12">
                                     <hr>
-                                    <b>Pemohon</b>
+                                    <b>Pemohon</b> <br>
+                                    <div class="custom-control custom-checkbox my-3">
+                                        <input type="checkbox" class="custom-control-input" name="sesuaiPemilik"
+                                            id="customCheck4" required>
+                                        <label class="custom-control-label" for="customCheck4">Check List Jika Data
+                                            Pemohon Sesuai Dengan Data Pemilik</label>
+                                    </div>
                                 </div>
                                 <div class="col-sm-12 col-md-6">
                                     <label>Nama Pemohon</label>
@@ -220,6 +226,8 @@
     <script src="{{ asset('./landing-assets/js/cek-tarif.js') }}"></script>
     <script src="{{ asset('./landing-assets/js/owner-address.js') }}"></script>
     <script src="{{ asset('./landing-assets/js/applicant-address.js') }}"></script>
+    <script src="{{ asset('./landing-assets/js/cari-data-kendaraan.js') }}"></script>
+    <script src="{{ asset('./landing-assets/js/ceklist-pemohon.js') }}"></script>
     <script>
         $(document).ready(function() {
             // Set HTML content for the tooltip

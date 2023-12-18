@@ -221,9 +221,9 @@
                                             <label class="custom-control-label" for="customCheck3">Kartu Uji</label>
                                         </div>
                                         <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="customCheck4"
+                                            <input type="checkbox" class="custom-control-input" id="customCheck5"
                                                 required>
-                                            <label class="custom-control-label" for="customCheck4">Surat Rekomendasi
+                                            <label class="custom-control-label" for="customCheck5">Surat Rekomendasi
                                                 Numpang Uji</label>
                                         </div>
                                     </div>
@@ -232,6 +232,12 @@
                                     <div class="col-12">
                                         <hr>
                                         <b>Pemohon</b>
+                                        <div class="custom-control custom-checkbox my-3">
+                                            <input type="checkbox" class="custom-control-input" name="sesuaiPemilik"
+                                                id="customCheck4" required>
+                                            <label class="custom-control-label" for="customCheck4">Check List Jika Data
+                                                Pemohon Sesuai Dengan Data Pemilik</label>
+                                        </div>
                                     </div>
                                     <div class="col-sm-12 col-md-6">
                                         <label>Nama Pemohon</label>
@@ -268,6 +274,7 @@
     <script src="{{ asset('./landing-assets/js/cek-kuota.js') }}"></script>
     <script src="{{ asset('./landing-assets/js/cek-tarif.js') }}"></script>
     <script src="{{ asset('./landing-assets/js/cari-data-kendaraan.js') }}"></script>
+    <script src="{{ asset('./landing-assets/js/ceklist-pemohon.js') }}"></script>
 
 
     <script src="{{ asset('./landing-assets/js/owner-address.js') }}"></script>
