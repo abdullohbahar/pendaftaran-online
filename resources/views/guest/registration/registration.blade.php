@@ -85,7 +85,7 @@
                     <div class="col-sm-12 col-md-12 col-lg-6">
                         <a href="{{ route('uji.pertama') }}"
                             class="card custom-rounded card-permohonan text-decoration-none"
-                            style="background-color:#C5FFF8">
+                            style="background-color:#273175; color: #F08742;">
                             <div class="card-body text-center center-div">
                                 <h4><b>Uji Pertama</b></h4>
                             </div>
@@ -94,7 +94,7 @@
                     <div class="col-sm-12 col-md-12 col-lg-6">
                         <a href="{{ route('uji.berkala') }}"
                             class="card custom-rounded card-permohonan text-decoration-none"
-                            style="background-color:#C5FFF8">
+                            style="background-color:#273175; color: #F08742;">
                             <div class="card-body text-center center-div">
                                 <h4><b>Uji Berkala</b></h4>
                             </div>
@@ -105,7 +105,7 @@
                     <div class="col-sm-12 col-md-12 col-lg-6">
                         <a href="{{ route('numpang.uji.masuk') }}"
                             class="card custom-rounded card-permohonan text-decoration-none"
-                            style="background-color:#C5FFF8">
+                            style="background-color:#273175; color: #F08742;">
                             <div class="card-body text-center center-div">
                                 <h4><b>Numpang Uji Masuk</b></h4>
                             </div>
@@ -114,7 +114,7 @@
                     <div class="col-sm-12 col-md-12 col-lg-6">
                         <a href="{{ route('mutasi.masuk') }}"
                             class="card custom-rounded card-permohonan text-decoration-none"
-                            style="background-color:#C5FFF8">
+                            style="background-color:#273175; color: #F08742;">
                             <div class="card-body text-center center-div">
                                 <h4><b>Mutasi Masuk</b></h4>
                             </div>

@@ -274,7 +274,7 @@
                 <hr>
                 <h5 class="text-center"><b>SOP NGEKIRONLINE</b></h5>
                 <hr>
-                <img src="{{ asset('./landing-assets/img/sop.png') }}" alt="" srcset="">
+                <img src="{{ asset('./landing-assets/img/sop.png') }}" class="w-100" alt="" srcset="">
             </div>
             <div class="col-12">
                 <hr>
@@ -302,11 +302,21 @@
     <script>
         $(document).ready(function() {
             $(".owl-carousel").owlCarousel({
-                items: 3, // Number of items to display in the carousel
                 loop: true, // Enable loop mode
                 autoplay: false, // Enable autoplay
                 autoplayTimeout: 2000, // Autoplay interval in milliseconds
-                autoplayHoverPause: true // Pause autoplay on hover
+                autoplayHoverPause: true, // Pause autoplay on hover
+                responsive: {
+                    0: {
+                        items: 1 // Jumlah item pada lebar kurang dari 600 pixel
+                    },
+                    480: {
+                        items: 1 // Jumlah item pada lebar 600 pixel atau lebih
+                    },
+                    768: {
+                        items: 3
+                    }
+                }
             });
         });
     </script>

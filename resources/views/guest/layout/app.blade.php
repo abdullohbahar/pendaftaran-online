@@ -29,6 +29,7 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
+            color: #273175;
         }
 
         main {
