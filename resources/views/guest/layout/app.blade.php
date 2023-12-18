@@ -63,6 +63,34 @@
         .my-float {
             margin-top: 16px;
         }
+
+        .navbar-nav .nav-item {
+            position: relative;
+        }
+
+        .navbar-nav .nav-item:after {
+            content: '';
+            display: block;
+            height: 2px;
+            /* ketebalan garis bawah */
+            width: 0;
+            background-color: #F08742;
+            /* warna garis bawah */
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: width 0.3s ease;
+        }
+
+        .navbar-nav .nav-item.active:after {
+            width: 90%;
+        }
+
+        .navbar-nav .nav-item.active a {
+            color: #F08742 !important;
+            /* warna teks ketika aktif */
+        }
     </style>
 </head>
 
@@ -83,16 +111,16 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto text-center">
-                        <li class="nav-item active">
+                        <li class="nav-item {{ $active == 'home' ? 'active' : '' }}">
                             <a class="nav-link" href="/">Beranda</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item {{ $active == 'regulasi' ? 'active' : '' }}">
                             <a class="nav-link" href="{{ route('regulation') }}">Regulasi</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item {{ $active == 'pendaftaran' ? 'active' : '' }}">
                             <a class="nav-link" href="{{ route('registration') }}">Pendaftaran</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item {{ $active == 'kritik' ? 'active' : '' }}">
                             <a class="nav-link" href="{{ route('kritik') }}">Kritik & Saran</a>
                         </li>
                     </ul>

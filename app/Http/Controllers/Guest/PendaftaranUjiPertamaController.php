@@ -24,7 +24,8 @@ class PendaftaranUjiPertamaController extends Controller
         $jenis = Klasifikasi::orderBy('klasifikasis', 'asc')->get();
 
         $data = [
-            'jenis' => $jenis
+            'jenis' => $jenis,
+            'active' => 'pendaftaran'
         ];
 
         return view('guest.registration.uji-pertama', $data);

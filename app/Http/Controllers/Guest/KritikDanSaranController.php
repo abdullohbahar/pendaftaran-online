@@ -10,7 +10,11 @@ class KritikDanSaranController extends Controller
 {
     public function index()
     {
-        return view('guest.kritik-saran');
+        $data = [
+            'active' => 'kritik'
+        ];
+
+        return view('guest.kritik-saran', $data);
     }
 
     public function store(Request $request)

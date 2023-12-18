@@ -32,6 +32,7 @@ class LandingController extends Controller
 
         $data = [
             'sliders' => $sliders,
+            'active' => 'home',
             'dataPendaftarTahunan' => json_encode($dataPendaftarTahunan)
         ];
 
@@ -43,7 +44,8 @@ class LandingController extends Controller
         $regulasi = Regulasi::all();
 
         $data = [
-            'regulasi' => $regulasi
+            'regulasi' => $regulasi,
+            'active' => 'regulasi'
         ];
 
         return view('guest.regulation', $data);

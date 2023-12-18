@@ -9,6 +9,10 @@ class RegistrationController extends Controller
 {
     public function index()
     {
-        return view('guest.registration.registration');
+        $data = [
+            'active' => 'pendaftaran'
+        ];
+
+        return view('guest.registration.registration', $data);
     }
 }

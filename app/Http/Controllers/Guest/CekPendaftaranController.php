@@ -35,6 +35,7 @@ class CekPendaftaranController extends Controller
 
         $data = [
             'identitasKendaraan' => $identitasKendaraan,
+            'active' => 'pendaftaran'
         ];
 
         return view('guest.cek-pendaftaran', $data);
