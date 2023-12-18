@@ -4,25 +4,26 @@
                                 </div>
                                 <div class="col-sm-12 col-md-4 col-lg-3 mt-2">
                                     <label>Provinsi</label>
-                                    <select name="" class="select2-data-array browser-default" id="provinsiPemohon">
+                                    <select name="" class="select2-data-array browser-default" id="provinsiPemohon"
+                                        required>
                                     </select>
                                 </div>
                                 <div class="col-sm-12 col-md-4 col-lg-3 mt-2">
                                     <label>Kabupaten</label>
-                                    <select name="" class="select2-data-array browser-default"
-                                        id="kabupatenPemohon">
+                                    <select name="" class="select2-data-array browser-default" id="kabupatenPemohon"
+                                        required>
                                     </select>
                                 </div>
                                 <div class="col-sm-12 col-md-4 col-lg-3 mt-2">
                                     <label>Kecamatan</label>
                                     <select name="" class="select2-data-array browser-default"
-                                        id="kecamatanPemohon">
+                                        id="kecamatanPemohon" required>
                                     </select>
                                 </div>
                                 <div class="col-sm-12 col-md-4 col-lg-3 mt-2">
                                     <label>Kelurahan</label>
                                     <select name="" class="select2-data-array browser-default"
-                                        id="kelurahanPemohon">
+                                        id="kelurahanPemohon" required>
                                     </select>
                                 </div>
 

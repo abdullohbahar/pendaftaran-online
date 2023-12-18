@@ -70,7 +70,7 @@
             </ol>
         </nav>
 
-        <h2>Uji Pertama</h2>
+        <h2><b>Uji Pertama</b></h2>
 
         <hr>
     </div>
@@ -87,7 +87,7 @@
                                     <label>Tanggal booking</label>
                                     <div class="input-group mb-3">
                                         <input type="text" class="form-control" readonly id="tanggalBooking"
-                                            name="tglpendaftaran">
+                                            name="tglpendaftaran" required>
                                         <div class="input-group-append">
                                             <button class="btn btn-success" id="cekKuota" type="button">Cek
                                                 Kuota</button>
@@ -97,17 +97,17 @@
                                 <div class="col-sm-12 col-md-3">
                                     <label>No Kendaraan (Awal)</label>
                                     <input type="text" class="form-control no-kend" name="no_kendaraan_awal"
-                                        maxlength="2">
+                                        maxlength="2" value="AB" readonly required>
                                 </div>
                                 <div class="col-sm-12 col-md-3">
                                     <label>No Kendaraan (Tengah)</label>
                                     <input type="text" class="form-control no-kend" name="no_kendaraan_tengah"
-                                        maxlength="4">
+                                        maxlength="4" required>
                                 </div>
                                 <div class="col-sm-12 col-md-3">
                                     <label>No Kendaraan (Belakang)</label>
                                     <input type="text" class="form-control no-kend" name="no_kendaraan_belakang"
-                                        maxlength="3">
+                                        maxlength="3" required>
                                 </div>
                             </div>
                             <div class="row">
@@ -117,7 +117,7 @@
                                 </div>
                                 <div class="col-12">
                                     <label>Nama Pemilik</label>
-                                    <input type="text" class="form-control" name="nama_pemilik" id="">
+                                    <input type="text" class="form-control" name="nama_pemilik" id="" required>
                                 </div>
                             </div>
                             {{-- alamat pemilik --}}
@@ -145,7 +145,7 @@
                                 <div class="col-sm-12 col-md-6">
                                     <label>JBB</label>
                                     <div class="input-group mb-3">
-                                        <input type="number" class="form-control" name="jbb" id="berat">
+                                        <input type="number" class="form-control" name="jbb" id="berat" required>
                                         <div class="input-group-append">
                                             <button class="btn btn-info" type="button" data-toggle="tooltip"
                                                 data-html="true" id="tooltipJBB">?</button>
@@ -182,16 +182,23 @@
                             <div class="row">
                                 <div class="col-12">
                                     <hr>
-                                    <b>Pemohon</b>
+                                    <b>Pemohon</b> <br>
+                                    <div class="custom-control custom-checkbox my-3">
+                                        <input type="checkbox" class="custom-control-input" name="sesuaiPemilik"
+                                            id="customCheck4" required>
+                                        <label class="custom-control-label" for="customCheck4">Check List Jika Data
+                                            Pemohon Sesuai Dengan Data Pemilik</label>
+                                    </div>
                                 </div>
                                 <div class="col-sm-12 col-md-6">
                                     <label>Nama Pemohon</label>
-                                    <input type="text" class="form-control" name="namapemohon" id="">
+                                    <input type="text" class="form-control" name="namapemohon" id=""
+                                        required>
                                 </div>
                                 <div class="col-sm-12 col-md-6">
                                     <label>Nomor Telepon Pemohon</label>
                                     <input type="text" class="form-control" name="nomor_telepon_pemohon"
-                                        id="">
+                                        id="" required>
                                 </div>
                             </div>
                             {{-- alamat pemohon --}}
@@ -219,6 +226,8 @@
     <script src="{{ asset('./landing-assets/js/cek-tarif.js') }}"></script>
     <script src="{{ asset('./landing-assets/js/owner-address.js') }}"></script>
     <script src="{{ asset('./landing-assets/js/applicant-address.js') }}"></script>
+    <script src="{{ asset('./landing-assets/js/cari-data-kendaraan.js') }}"></script>
+    <script src="{{ asset('./landing-assets/js/ceklist-pemohon.js') }}"></script>
     <script>
         $(document).ready(function() {
             // Set HTML content for the tooltip

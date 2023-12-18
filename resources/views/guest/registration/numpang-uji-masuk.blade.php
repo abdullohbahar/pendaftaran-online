@@ -95,7 +95,7 @@
                                     <label>Tanggal booking</label>
                                     <div class="input-group mb-3">
                                         <input type="text" name="tglpendaftaran" class="form-control" id="tanggalBooking"
-                                            readonly>
+                                            required readonly>
                                         <div class="input-group-append">
                                             <button class="btn btn-success" id="cekKuota" type="button">Cek
                                                 Kuota</button>
@@ -122,17 +122,17 @@
                                     <div class="col-sm-12 col-md-4">
                                         <label>No Kendaraan (Awal)</label>
                                         <input type="text" class="form-control no-kend" id="noKendAwal"
-                                            name="no_kendaraan_awal" maxlength="2">
+                                            name="no_kendaraan_awal" maxlength="2" required>
                                     </div>
                                     <div class="col-sm-12 col-md-4">
                                         <label>No Kendaraan (Tengah)</label>
                                         <input type="text" class="form-control no-kend" id="noKendTengah"
-                                            name="no_kendaraan_tengah" maxlength="4">
+                                            name="no_kendaraan_tengah" maxlength="4" required>
                                     </div>
                                     <div class="col-sm-12 col-md-4">
                                         <label>No Kendaraan (Belakang)</label>
                                         <input type="text" class="form-control no-kend" id="noKendBelakang"
-                                            name="no_kendaraan_belakang" maxlength="3">
+                                            name="no_kendaraan_belakang" maxlength="3" required>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -140,7 +140,8 @@
                                         <hr>
                                         <b>Pemilik</b> <br>
                                         <label>Nama Pemilik</label>
-                                        <input type="text" class="form-control" name="nama_pemilik" id="namaPemilik">
+                                        <input type="text" class="form-control" name="nama_pemilik" id="namaPemilik"
+                                            required>
                                     </div>
                                 </div>
                                 {{-- alamat pemilik --}}
@@ -180,7 +181,8 @@
                                     <div class="col-sm-12 col-md-4">
                                         <label>JBB</label>
                                         <div class="input-group mb-3">
-                                            <input type="number" class="form-control" name="jbb" id="berat">
+                                            <input type="number" class="form-control" name="jbb" id="berat"
+                                                required>
                                             <div class="input-group-append">
                                                 <button class="btn btn-info" type="button" data-toggle="tooltip"
                                                     data-html="true" id="tooltipJBB">?</button>
@@ -219,9 +221,9 @@
                                             <label class="custom-control-label" for="customCheck3">Kartu Uji</label>
                                         </div>
                                         <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="customCheck4"
+                                            <input type="checkbox" class="custom-control-input" id="customCheck5"
                                                 required>
-                                            <label class="custom-control-label" for="customCheck4">Surat Rekomendasi
+                                            <label class="custom-control-label" for="customCheck5">Surat Rekomendasi
                                                 Numpang Uji</label>
                                         </div>
                                     </div>
@@ -230,14 +232,21 @@
                                     <div class="col-12">
                                         <hr>
                                         <b>Pemohon</b>
+                                        <div class="custom-control custom-checkbox my-3">
+                                            <input type="checkbox" class="custom-control-input" name="sesuaiPemilik"
+                                                id="customCheck4" required>
+                                            <label class="custom-control-label" for="customCheck4">Check List Jika Data
+                                                Pemohon Sesuai Dengan Data Pemilik</label>
+                                        </div>
                                     </div>
                                     <div class="col-sm-12 col-md-6">
                                         <label>Nama Pemohon</label>
-                                        <input type="text" class="form-control" name="namapemohon" id="">
+                                        <input type="text" class="form-control" name="namapemohon" id=""
+                                            required>
                                     </div>
                                     <div class="col-sm-12 col-md-6">
                                         <label>Nomor Telepon Pemohon</label>
-                                        <input type="text" class="form-control" name="nomor_telepon_pemohon"
+                                        <input type="text" class="form-control" name="nomor_telepon_pemohon" required
                                             id="">
                                     </div>
                                 </div>
@@ -265,6 +274,7 @@
     <script src="{{ asset('./landing-assets/js/cek-kuota.js') }}"></script>
     <script src="{{ asset('./landing-assets/js/cek-tarif.js') }}"></script>
     <script src="{{ asset('./landing-assets/js/cari-data-kendaraan.js') }}"></script>
+    <script src="{{ asset('./landing-assets/js/ceklist-pemohon.js') }}"></script>
 
 
     <script src="{{ asset('./landing-assets/js/owner-address.js') }}"></script>

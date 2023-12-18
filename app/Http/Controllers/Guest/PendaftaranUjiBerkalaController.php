@@ -28,7 +28,8 @@ class PendaftaranUjiBerkalaController extends Controller
         $data = [
             'jenis' => $jenis,
             'merek' => $merek,
-            'tipe' => $tipe
+            'tipe' => $tipe,
+            'active' => 'pendaftaran'
         ];
 
         return view('guest.registration.uji-berkala', $data);

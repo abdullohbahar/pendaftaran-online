@@ -9,6 +9,10 @@ class CekKendaraanController extends Controller
 {
     public function index()
     {
-        return view('guest.cek-kendaraan');
+        $data = [
+            'active' => ''
+        ];
+
+        return view('guest.cek-kendaraan', $data);
     }
 }

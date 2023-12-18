@@ -25,7 +25,8 @@ class PendaftaranNumpangUjiMasukController extends Controller
 
         $data = [
             'jenis' => $jenis,
-            'daerah' => $daerah
+            'daerah' => $daerah,
+            'active' => 'pendaftaran'
         ];
 
         return view('guest.registration.numpang-uji-masuk', $data);

@@ -5,25 +5,25 @@
                                 <div class="col-sm-12 col-md-4 col-lg-3 mt-2">
                                     <label>Provinsi</label>
                                     <select name="provinsi_pemilik" class="select2-data-array browser-default"
-                                        id="provinsiPemilik">
+                                        id="provinsiPemilik" required>
                                     </select>
                                 </div>
                                 <div class="col-sm-12 col-md-4 col-lg-3 mt-2">
                                     <label>Kabupaten</label>
                                     <select name="kabupaten_pemilik" class="select2-data-array browser-default"
-                                        id="kabupatenPemilik">
+                                        id="kabupatenPemilik" required>
                                     </select>
                                 </div>
                                 <div class="col-sm-12 col-md-4 col-lg-3 mt-2">
                                     <label>Kecamatan</label>
                                     <select name="kecamatan_pemilik" class="select2-data-array browser-default"
-                                        id="kecamatanPemilik">
+                                        id="kecamatanPemilik" required>
                                     </select>
                                 </div>
                                 <div class="col-sm-12 col-md-4 col-lg-3 mt-2">
                                     <label>Kelurahan</label>
                                     <select name="kelurahan_pemilik" class="select2-data-array browser-default"
-                                        id="kelurahanPemilik">
+                                        id="kelurahanPemilik" required>
                                     </select>
                                 </div>
 

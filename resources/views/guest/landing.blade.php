@@ -19,6 +19,23 @@
             height: 200px;
             object-fit: contain;
         }
+
+        .btn-blue {
+            background-color: #00197b;
+            color: white;
+            height: 3rem;
+        }
+
+        .btn-blue:hover {
+            color: #F08742;
+        }
+
+        .center-div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
     </style>
 @endpush
 
@@ -45,28 +62,34 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-12 mt-3 text-center" style="color: #03A678">
+            <div class="col-12 mt-3 text-center" style="color: #00197b">
                 <h3>DAFTAR UJI KENDARAAN BERMOTOR ONLINE</h3>
                 <h6>"Mari daftar uji berkala kendaraan secara online"</h6>
                 <div class="row mt-3">
                     <div class="col-sm-12 col-md-4">
-                        <a href="{{ route('cek.kendaraan') }}" class="btn btn-success btn-block mt-2">
-                            <i class="fa-solid fa-magnifying-glass"></i> Cek Kendaraan
+                        <a href="{{ route('cek.kendaraan') }}" class="btn btn-blue btn-block rounded-pill mt-2">
+                            <div class="center-div">
+                                <i class="fa-solid fa-magnifying-glass mr-2"></i> Cek Kendaraan
+                            </div>
                         </a>
                     </div>
                     <div class="col-sm-12 col-md-4">
-                        <a href="{{ route('registration') }}" class="btn btn-success btn-block mt-2">
-                            <i class="fa-regular fa-pen-to-square"></i> Pendaftaran
+                        <a href="{{ route('registration') }}" class="btn btn-blue btn-block rounded-pill mt-2">
+                            <div class="center-div">
+                                <i class="fa-regular fa-pen-to-square mr-2"></i> Pendaftaran
+                            </div>
                         </a>
                     </div>
                     <div class="col-sm-12 col-md-4">
-                        <a href="{{ route('cek.pendaftaran') }}" class="btn btn-success btn-block mt-2">
-                            <i class="fa-solid fa-magnifying-glass"></i> Cek Pendaftaran
+                        <a href="{{ route('cek.pendaftaran') }}" class="btn btn-blue btn-block rounded-pill mt-2">
+                            <div class="center-div">
+                                <i class="fa-solid fa-magnifying-glass mr-2"></i> Cek Pendaftaran
+                            </div>
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="col-12 mt-3 text-center">
+            <div class="col-12 mt-3 text-center" style="color: #273175;">
                 <hr>
                 <h5><b>UPTD TERDAFTAR</b></h5>
                 <hr>
@@ -249,9 +272,9 @@
             </div>
             <div class="col-12">
                 <hr>
-                <h5 class="text-center"><b>SOP NGEKIRONLINE</b></h5>
+                <h5 class="text-center" style="color: #273175;"><b>SOP NGEKIRONLINE</b></h5>
                 <hr>
-                <img src="{{ asset('./landing-assets/img/sop.png') }}" alt="" srcset="">
+                <img src="{{ asset('./landing-assets/img/sop.png') }}" class="w-100" alt="" srcset="">
             </div>
             <div class="col-12">
                 <hr>
@@ -279,11 +302,21 @@
     <script>
         $(document).ready(function() {
             $(".owl-carousel").owlCarousel({
-                items: 3, // Number of items to display in the carousel
                 loop: true, // Enable loop mode
                 autoplay: false, // Enable autoplay
                 autoplayTimeout: 2000, // Autoplay interval in milliseconds
-                autoplayHoverPause: true // Pause autoplay on hover
+                autoplayHoverPause: true, // Pause autoplay on hover
+                responsive: {
+                    0: {
+                        items: 1 // Jumlah item pada lebar kurang dari 600 pixel
+                    },
+                    480: {
+                        items: 1 // Jumlah item pada lebar 600 pixel atau lebih
+                    },
+                    768: {
+                        items: 3
+                    }
+                }
             });
         });
     </script>
