@@ -183,7 +183,8 @@ class PendaftaranUjiPertamaController extends Controller
         $transaksi = $this->queryTransaction($idTransaksi);
 
         $data = [
-            'transaksi' => $transaksi
+            'transaksi' => $transaksi,
+            'active' => ''
         ];
 
         return view('guest.registration.bukti-pendaftaran.bukti-pendaftaran', $data);
@@ -198,7 +199,8 @@ class PendaftaranUjiPertamaController extends Controller
 
         $data = [
             'transaksi' => $transaksi,
-            'qrCode' => $qrCodeBase64
+            'qrCode' => $qrCodeBase64,
+            'active' => ''
         ];
 
         $fileName = "BUKTI PENDAFTARAN - $transaksi->nomor_kendaraan - $transaksi->tanggal_berakhir_masa_uji";
