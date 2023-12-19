@@ -80,7 +80,7 @@
             <div class="col-sm-12 col-md-12">
                 <div class="card">
                     <div class="card-body">
-                        <form action="{{ route('simpan.uji.pertama') }}" method="POST">
+                        <form action="{{ route('simpan.uji.pertama') }}" method="POST" id="form">
                             @csrf
                             <div class="row">
                                 <div class="col-sm-12 col-md-3">
@@ -92,6 +92,7 @@
                                             <button class="btn btn-success" id="cekKuota" type="button">Cek
                                                 Kuota</button>
                                         </div>
+                                        <span id="errorMessage" style="color: red" class="error-message"></span>
                                     </div>
                                 </div>
                                 <div class="col-sm-12 col-md-3">
@@ -204,7 +205,7 @@
                             @include('guest.registration.components.applicant-address')
                             <div class="row mt-3">
                                 <div class="col-12">
-                                    <button type="submit" class="btn btn-block btn-info">
+                                    <button type="submit" class="btn btn-block btn-info" id="submitButton">
                                         <i class="fa-regular fa-pen-to-square"></i> Daftar
                                     </button>
                                 </div>
@@ -250,6 +251,22 @@
                 },
                 html: true
             });
+        });
+
+        document.getElementById('form').addEventListener('submit', function(event) {
+            var exampleInput = document.getElementById('tanggalBooking').value;
+            var errorMessage = document.getElementById('errorMessage');
+            var form = document.getElementById('form');
+
+            if (exampleInput.trim() === '') {
+                errorMessage.textContent = 'Harap Memilih Tanggal Booking.';
+                form.scrollIntoView({
+                    behavior: 'smooth'
+                })
+                event.preventDefault(); // Mencegah formulir dikirim jika validasi gagal
+            } else {
+                errorMessage.textContent = ''; // Menghapus pesan kesalahan jika input valid
+            }
         });
     </script>
 @endpush

@@ -80,7 +80,7 @@
             <div class="col-sm-12 col-md-12">
                 <div class="card">
                     <div class="card-body">
-                        <form action="{{ route('simpan.mutasi.masuk') }}" method="POST">
+                        <form action="{{ route('simpan.mutasi.masuk') }}" method="POST" id="form">
                             @csrf
                             {{-- jika data ditemukan tampilkan alert berikut --}}
                             <div class="alert alert-success text-capitalize" role="alert" hidden>
@@ -102,6 +102,7 @@
                                                 Kuota</button>
                                         </div>
                                     </div>
+                                    <span id="errorMessage" style="color: red" class="error-message"></span>
                                 </div>
                                 <div class="col-sm-12 col-md-6">
                                     <label>Nomor Uji</label>
@@ -301,6 +302,22 @@
                 },
                 html: true
             });
+        });
+
+        document.getElementById('form').addEventListener('submit', function(event) {
+            var exampleInput = document.getElementById('tanggalBooking').value;
+            var errorMessage = document.getElementById('errorMessage');
+            var form = document.getElementById('form');
+
+            if (exampleInput.trim() === '') {
+                errorMessage.textContent = 'Harap Memilih Tanggal Booking.';
+                form.scrollIntoView({
+                    behavior: 'smooth'
+                })
+                event.preventDefault(); // Mencegah formulir dikirim jika validasi gagal
+            } else {
+                errorMessage.textContent = ''; // Menghapus pesan kesalahan jika input valid
+            }
         });
     </script>
 @endpush

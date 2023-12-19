@@ -111,6 +111,8 @@ class PendaftaranUjiPertamaController extends Controller
 
             $lastBillCode = Transaksi::orderBy('id', 'desc')->first()->bill_code;
 
+            $tarif = 0;
+
             $dataTransaksi = [
                 'pendaftaran_id' => $saveDataPendaftaran->id,
                 'bill_code' => '0' . $lastBillCode + 1,

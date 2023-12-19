@@ -158,18 +158,18 @@
                                             <td>:</td>
                                             <td>{{ $transaksi->sifat_pengujian ?? '-' }}</td>
                                         </tr>
+                                        @php
+                                            \Carbon\Carbon::setLocale('id');
+                                        @endphp
                                         <tr>
                                             <th>Tanggal Berakhir Masa Uji</th>
                                             <td>:</td>
-                                            <td>{{ str_replace('-', '', \Carbon\Carbon::parse($transaksi->tanggal_berakhir_masa_uji)->format('d-m-Y')) }}
+                                            <td>{{ \Carbon\Carbon::parse($transaksi->untuk_diuji_tanggal)->translatedFormat('j F Y') }}
                                             </td>
                                         </tr>
                                         <tr>
                                             <th>Untuk Diuji pada tanggal</th>
                                             <td>:</td>
-                                            @php
-                                                \Carbon\Carbon::setLocale('id');
-                                            @endphp
                                             <td>{{ \Carbon\Carbon::parse($transaksi->untuk_diuji_tanggal)->translatedFormat('j F Y') }}
                                             </td>
                                         </tr>
