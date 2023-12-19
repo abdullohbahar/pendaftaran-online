@@ -246,8 +246,8 @@
                                     </div>
                                     <div class="col-sm-12 col-md-6">
                                         <label>Nomor Telepon Pemohon</label>
-                                        <input type="text" class="form-control" name="nomor_telepon_pemohon" required
-                                            id="">
+                                        <input type="text" maxlength="14" class="form-control"
+                                            name="nomor_telepon_pemohon" required id="">
                                     </div>
                                 </div>
                                 {{-- alamat pemohon --}}
