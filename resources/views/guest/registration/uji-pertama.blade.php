@@ -149,7 +149,6 @@
                                         <div class="input-group-append">
                                             <button class="btn btn-info" type="button" data-toggle="tooltip"
                                                 data-html="true" id="tooltipJBB">?</button>
-                                            <button class="btn btn-success" type="button" id="cekTarif">Cek Tarif</button>
                                         </div>
                                     </div>
                                 </div>
