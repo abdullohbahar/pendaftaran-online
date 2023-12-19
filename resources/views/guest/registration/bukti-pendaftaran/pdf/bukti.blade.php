@@ -157,16 +157,18 @@
                     <td>
                         13. Tanggal Berakhir Masa Uji
                     </td>
+                    @php
+                        \Carbon\Carbon::setLocale('id');
+                    @endphp
                     <td>:
-                        {{ str_replace('-', '', \Carbon\Carbon::parse($transaksi->tanggal_berakhir_masa_uji)->format('d-m-Y')) }}
+                        {{ $tglUji = \Carbon\Carbon::parse($transaksi->untuk_diuji_tanggal)->translatedFormat('j F Y') }}
+                    </td>
                 </tr>
                 <tr>
                     <td>
                         14. Untuk diuji pada tanggal
                     </td>
-                    @php
-                        \Carbon\Carbon::setLocale('id');
-                    @endphp
+
                     <td>:
                         {{ $tglUji = \Carbon\Carbon::parse($transaksi->untuk_diuji_tanggal)->translatedFormat('j F Y') }}
                     </td>

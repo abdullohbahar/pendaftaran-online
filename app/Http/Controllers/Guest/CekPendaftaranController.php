@@ -23,7 +23,8 @@ class CekPendaftaranController extends Controller
                     'identitaskendaraans.noregistrasikendaraan',
                     'kodepenerbitan.keterangan',
                     'transaksis.id as id_transaksi',
-                    'transaksis.bill_paid'
+                    'transaksis.bill_paid',
+                    'pendaftarans.posisi'
                 )
                 ->where('identitaskendaraans.nouji', $request->nouji)
                 ->orWhere('identitaskendaraans.noregistrasikendaraan', $request->nouji)

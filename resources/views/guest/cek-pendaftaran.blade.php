@@ -113,10 +113,10 @@
                                                     </td>
                                                     <td>{{ $item->noregistrasikendaraan }}</td>
                                                     <td>
-                                                        @if ($item->bill_paid)
-                                                            <button class="btn btn-info btn-sm">Lunas</button>
+                                                        @if ($item->posisi > 1)
+                                                            <button class="btn btn-success btn-sm">Telah Uji</button>
                                                         @else
-                                                            <button class="btn btn-danger btn-sm">Belum Lunas</button>
+                                                            <button class="btn btn-secondary btn-sm">Belum Uji</button>
                                                         @endif
                                                     </td>
                                                     <td>

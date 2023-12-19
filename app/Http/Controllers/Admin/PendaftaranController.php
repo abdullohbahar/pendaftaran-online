@@ -21,6 +21,7 @@ class PendaftaranController extends Controller
                 ->select(
                     'pendaftarans.tglpendaftaran',
                     'pendaftarans.namapemohon',
+                    'pendaftarans.posisi',
                     'identitaskendaraans.nama as nama_pemilik',
                     'identitaskendaraans.noregistrasikendaraan',
                     'kodepenerbitan.keterangan',
@@ -34,10 +35,10 @@ class PendaftaranController extends Controller
                 //             </div>';
                 // })
                 ->addColumn('status', function ($item) {
-                    if ($item->bill_paid) {
-                        $html = '<button class="btn btn-info btn-sm">Lunas</button>';
+                    if ($item->posisi > 1) {
+                        $html = '<button class="btn btn-success btn-sm">Telah Uji</button>';
                     } else {
-                        $html = '<button class="btn btn-danger btn-sm">Belum Lunas</button>';
+                        $html = '<button class="btn btn-secondary btn-sm">Belum Uji</button>';
                     }
 
                     return $html;

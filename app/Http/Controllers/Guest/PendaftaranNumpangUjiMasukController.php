@@ -101,6 +101,7 @@ class PendaftaranNumpangUjiMasukController extends Controller
             $tarif = json_decode($cekTarif->getContent())->data->tarif;
 
             $lastBillCode = Transaksi::orderBy('id', 'desc')->first()->bill_code;
+            $tarif = 0;
 
             $dataTransaksi = [
                 'pendaftaran_id' => $saveDataPendaftaran->id,
