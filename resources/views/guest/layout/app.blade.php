@@ -141,44 +141,6 @@
     </main>
 
     <footer>
-        <div style="background-color: #162E80; color: white;">
-            <div class="container">
-                <div class="row pt-4 pb-4">
-                    <div class="col-sm-12 col-md-4">
-                        <h5><b>Kontak Kami</b></h5>
-                        <p>
-                            Jika ada kendala hubungi <br>
-                            Hotline : Pengujian Kendaraan Bermotor (PKB) Dishub Kab/Kota terkait. <br>
-                            Email: tricipta09@yahoo.com dan office@tricipta.com.
-                        </p>
-                    </div>
-                    <div class="col-sm-12 col-md-8">
-                        <h5><b>Tentang Aplikasi</b></h5>
-                        <p class="text-justify">
-                            Aplikasi ini secara garis besar dibagi menjadi bidang pelayanan pendaftaran ujiyang dapat
-                            dilakukan
-                            secara online, bidang pelayanan uji di ruang pengujian semua prosesnya dilakukan secara
-                            komputerisasi, bidang pengawasan dan monitoring kinerja pelaksanaan uji disampaikan secara
-                            online
-                            realtime kepada bidang terkait seperti pimpinan Dishub Kab/Kot, Bidang Pendapatan dan
-                            Provinsi
-                            dan
-                            Kemenhub, serta pengawasan kendaraan dijalan dalam dilakukan secara online oleh petugas
-                            Dallops
-                            dan
-                            hasil pengawasan juga sudah terintegrasi dengan Dishub Provinsi dan Kemenhub. PKB yang sudah
-                            bergabung dengan clouds ini penanganan pelayanan dan monitoring dapat dilakukan secara
-                            online
-                            sehingga terwujud pelayanan PRAKTIS – HEMAT – HANDAL (PH2) dan sudah sesuai dengan UU Nomor
-                            22
-                            Tahun
-                            2009 tentang Lalu Lintas dan Angkutan Jalan, PP Nomor 55 Tahun 2012 tentang Kendaraan dan PM
-                            Perhubungan No. 133 Tahun 2015 tentang Pengujian Berkala Kendaraan Bermotor.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div style="background-color: #001C38; color: white;">
             <div class="container justify-content-between d-flex justify-content-between">
                 <div class="py-2">
