@@ -41,7 +41,7 @@
 
 @section('content')
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel"
-        style="background-color: rgb(237, 235, 235)">
+        style="background-color: rgb(237, 235, 235); margin-top: 85px;">
         <div class="carousel-inner">
             @foreach ($sliders as $key => $slider)
                 <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
