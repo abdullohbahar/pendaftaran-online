@@ -138,6 +138,9 @@
 
     <main>
         @yield('content')
+        <a href="https://api.whatsapp.com/send?phone=+6285700767354&text=Hola" class="float" target="_blank">
+            <i class="fa-brands fa-whatsapp my-float"></i>
+        </a>
     </main>
 
     <footer>
@@ -154,10 +157,6 @@
                 </div>
             </div>
         </div>
-
-        <a href="https://api.whatsapp.com/send?phone=+6285700767354&text=Hola" class="float" target="_blank">
-            <i class="fa-brands fa-whatsapp my-float"></i>
-        </a>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
