@@ -152,15 +152,9 @@
 
     <footer>
         <div style="background-color: #001C38; color: white;">
-            <div class="container justify-content-between d-flex justify-content-between">
-                <div class="py-2">
-                    {{-- <a class="text-reset" href="/">Beranda</a> |
-                    <a class="text-reset" href="{{ route('regulation') }}">Regulasi</a> |
-                    <a class="text-reset" href="{{ route('registration') }}">Pendaftaran</a> |
-                    <a class="text-reset" href="{{ route('kritik') }}">Kritik dan Saran</a> --}}
-                </div>
-                <div class="py-2">
-                    <span text-end>Copyright &copy; {{ date('Y') }} CV. SOLUSI TEKNIK INDONESIA</span>
+            <div class="container">
+                <div class="py-3 text-center" style="font-size: 10.7pt">
+                    <span>Copyright &copy; {{ date('Y') }} CV. SOLUSI TEKNIK INDONESIA</span>
                 </div>
             </div>
         </div>
