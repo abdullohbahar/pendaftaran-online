@@ -98,6 +98,13 @@
             justify-content: center;
             height: 100%;
         }
+
+        .center-div1 {
+            display: flex;
+            align-items: center;
+            /* justify-content: center; */
+            height: 100%;
+        }
     </style>
 </head>
 
