@@ -22,7 +22,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-
+    <link rel="shortcut icon" href="https://www.dephub.go.id/img/favicon.ico" type="image/x-icon">
 
     <title>@yield('title')</title>
 
@@ -91,6 +91,13 @@
             color: #F08742 !important;
             /* warna teks ketika aktif */
         }
+
+        .center-div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
     </style>
 </head>
 
@@ -99,10 +106,10 @@
     <header>
         <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
             <div class="container">
-                <a class="navbar-brand" href="/">
-                    <img src="https://getbootstrap.com/docs/4.6/assets/brand/bootstrap-solid.svg" width="30"
-                        height="30" class="d-inline-block align-top" alt="">
-                    Bootstrap
+                <a class="navbar-brand center-div" href="/">
+                    <img src="{{ asset('landing-assets/img/dishub.png') }}" width="75"
+                        class="d-inline-block align-top" alt="">
+                    <span class="font-weight-bold"> UPTD PKB SRAGEN</span>
                 </a> <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">
