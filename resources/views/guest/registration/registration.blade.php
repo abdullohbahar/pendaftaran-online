@@ -60,7 +60,7 @@
 @endpush
 
 @section('content')
-    <div class="container">
+    <div class="container" style="margin-top: 100px">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/">Beranda</a></li>
